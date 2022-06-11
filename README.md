@@ -7,7 +7,7 @@ USER STORIES:
 
    Critérios de aceitação:
 
-   a) Visualizar títulos do usuário;
+   a) Visualizar títulos emprestados ao usuário;
 
    b) Verificar se usuário está ativo;
 
@@ -15,8 +15,38 @@ USER STORIES:
    
 2) Descrição: Como um usuário administrador, eu preciso bloquear um usuário para impedi-lo de solicitar empréstimos.
 
-  Critérios de aceitação:
+   Critérios de aceitação:
   
-  a) Exibir a lista de usuários bloqueados;
+   a) Exibir a lista de usuários bloqueados;
   
-  b) Emitir alerta de proibição de empréstimo para usuários bloqueados;
+   b) Emitir alerta de proibição de empréstimo para usuários bloqueados;
+  
+3) Descrição: Como um usuário administrador, eu preciso adicionar um usuário para que ele tenha acesso à biblioteca.
+
+   Critérios de aceitação:
+   
+   a) Acessar a lista de usuários ativos;
+   
+   b) Exibir retorno do programa com as inscrições "Usuário adicionado";
+   
+4) Descrição: Como um usuário comum, eu quero ver os livros disponíveis para poder escolher um título para empréstimo.
+
+   Critérios de aceitação:
+   
+   a) Exibir a lista de livros disponíveis;
+   
+   b) Exibir se a disponibilidade (ou indisponibilidade) do livro;
+   
+   c) Solicitar confirmação de empréstimo ao usuário;
+   
+5) Descrição: Como um novo livro, eu preciso ser cadastrado no sistema para ser armazenado na biblioteca;
+
+   Critérios de aceitação:
+   
+   a) Ver a lista de livros disponíveis;
+   
+   b) Exibir retorno do programa com os dizeres "Título adicionado com sucesso!"
+   
+   c) Impedir que o título seja cadastrado mais de uma vez no sistema;
+   
+  6) Descrição: 
