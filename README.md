@@ -49,4 +49,15 @@ USER STORIES:
    
    c) Impedir que o título seja cadastrado mais de uma vez no sistema;
    
-  6) Descrição: 
+ 6) Descrição: Como um usuário comum, eu quero devolver um livro para ser desbloqueado da biblioteca;
+     
+    Critérios de aceitação:
+    
+    a) Desbloquear o acesso do usuário;
+    
+    b) Exibiir lista de usuários bloqueados;
+    
+    c) Exibir aviso de "Usuário desbloqueado com sucesso!"
+    
+    d) Exibir lista de livros devolvidos.
+      
