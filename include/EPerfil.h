@@ -4,8 +4,8 @@
 using namespace std;
 
 enum class EPerfil{
-
-
+    ADMIN,
+    USER
 };
 
 #endif
