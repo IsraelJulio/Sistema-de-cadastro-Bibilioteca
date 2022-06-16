@@ -12,7 +12,7 @@ class Livro{
         string _nome;
         EGenero _genero;
     public:
-        Livro(int id, string nome, EGenero genero){}
+        Livro(int id, string nome, EGenero genero);
 };
 
 #endif
