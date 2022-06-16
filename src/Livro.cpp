@@ -1,17 +1,18 @@
 #include "Livro.h"
 #include<fstream>
-Livro::Livro(int id, string nome, EGenero genero){
+Livro::Livro(int id, string nome, EGenero genero, bool active){
     _id = id;
     _nome = nome;
     _genero = genero;
+    _active = active;
 }
 
 vector<Livro*> Livro::CarregarLivrosSalvos(){
     vector<Livro*> livrosSalvos;
     string conteudo = "";
     ifstream arq("Livros.txt");
-    string id,nome,genero = "";
-    int i =0;
+    string id,nome,genero,state = "";
+    long unsigned int i =0;
     if (arq.is_open())
     {
         while (getline(arq, conteudo)){
@@ -40,12 +41,20 @@ vector<Livro*> Livro::CarregarLivrosSalvos(){
                     break;
                 }
             }
-            
-            Livro* livro = new Livro(stoi(id),nome, static_cast<EGenero>(stoi(genero)));
+            for ( i = i+1; i < conteudo.size(); i++)
+            {
+                if(conteudo[i] != ','){
+                    state += conteudo[i] ;
+                } else{
+                    break;
+                }
+            }
+            Livro* livro = new Livro(stoi(id),nome, static_cast<EGenero>(stoi(genero)),state == "A");
             livrosSalvos.push_back(livro);
             nome = "";
             genero = "";
             id = "";
+            state = "";
         }
     }   
     return livrosSalvos;

@@ -12,9 +12,10 @@ class Livro{
         int _id;
         string _nome;
         EGenero _genero;
+        bool _active;
         
     public:
-        Livro(int id, string nome, EGenero genero);
+        Livro(int id, string nome, EGenero genero, bool active);
         static vector<Livro*> CarregarLivrosSalvos();
         void Imprime();
         string GetEnum(EGenero EnumId);
