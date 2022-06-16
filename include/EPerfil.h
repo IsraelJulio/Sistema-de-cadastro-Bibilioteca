@@ -3,7 +3,7 @@
 
 using namespace std;
 
-enum class Perfil{
+enum class EPerfil{
 
 
 };
