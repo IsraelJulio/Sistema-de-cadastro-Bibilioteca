@@ -17,6 +17,7 @@ class User{
     public:
         vector<Livro>ListarLivrosDisponiveis();
         User(string nome, string matricula, EPerfil perfil);
+        static vector<User*> CarregarUsuarios();
 };
 
 #endif

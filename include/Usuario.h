@@ -14,6 +14,7 @@ class Usuario : public User{
     bool Reservar(int LivroId);
     vector<Livro> ListarReservados();
     Usuario(string nome, string matricula, EPerfil perfil);
+    Usuario(string nome, string matricula, EPerfil perfil,vector<Livro*> livros);
 
 };
 

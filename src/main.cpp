@@ -2,6 +2,7 @@ using namespace std;
 #include <iostream>
 #include <vector>
 #include "Livro.h"
+#include "User.h"
 
 int main() {
 
@@ -12,6 +13,7 @@ int main() {
          livro->Imprime();
     }
     
+
     
 
     return 0;
