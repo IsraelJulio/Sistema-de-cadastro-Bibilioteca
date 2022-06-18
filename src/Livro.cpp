@@ -6,9 +6,11 @@ Livro::Livro(int id, string nome, EGenero genero, bool active){
     _genero = genero;
     _active = active;
 }
-
-vector<Livro*> Livro::CarregarLivrosSalvos(){
-    vector<Livro*> livrosSalvos;
+int Livro::GetId(){
+    return _id;
+}
+vector<Livro> Livro::CarregarLivrosSalvos(){
+    vector<Livro> livrosSalvos;
     string conteudo = "";
     ifstream arq("Livros.txt");
     string id,nome,genero,state = "";
@@ -49,7 +51,7 @@ vector<Livro*> Livro::CarregarLivrosSalvos(){
                     break;
                 }
             }
-            Livro* livro = new Livro(stoi(id),nome, static_cast<EGenero>(stoi(genero)),state == "A");
+            Livro livro = Livro(stoi(id),nome, static_cast<EGenero>(stoi(genero)),state == "A");
             livrosSalvos.push_back(livro);
             nome = "";
             genero = "";
@@ -100,4 +102,15 @@ string Livro::GetEnum(EGenero EnumId){
             break;
     }
     return result;
+}
+
+Livro Livro::GetById(int id){
+    vector<Livro> livrosSalvos = Livro::CarregarLivrosSalvos();
+    for(auto it = livrosSalvos.begin(); it <= livrosSalvos.end(); ++it) {
+        if(it->GetId() == id) {
+            return *it;       
+        }
+    }
+    Livro t = Livro(0,"",EGenero::AVENTURA,false);
+    return t;
 }

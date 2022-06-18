@@ -1,2 +1,2 @@
 Israel Jhonatas,2020027008,1;
-Usuario comum,123456,2,1,Fundamentos de Cálculo,0,4,Fundamentos da Quimica,2,A;
+Usuario comum,123456,2,1,;

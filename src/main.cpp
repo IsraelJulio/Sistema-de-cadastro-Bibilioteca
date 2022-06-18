@@ -6,15 +6,12 @@ using namespace std;
 
 int main() {
 
-    vector<Livro*> livrosSalvos = Livro::CarregarLivrosSalvos();
+    vector<Livro> livrosSalvos = Livro::CarregarLivrosSalvos();
     
     for (auto livro : livrosSalvos)
     {
-         livro->Imprime();
+         livro.Imprime();
     }
-    
-
-    
 
     return 0;
 }

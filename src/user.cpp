@@ -16,7 +16,7 @@ vector<User*> CarregarUsuarios(){
     ifstream arq("Usuarios.txt");
     string nome,matricula,perfil = "";
 
-    string id,nome,genero,state = "";
+    string id,genero,state = "";
     long unsigned int i =0;
     if (arq.is_open())
     {
