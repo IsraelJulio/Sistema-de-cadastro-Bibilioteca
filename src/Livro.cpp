@@ -1,5 +1,8 @@
 #include "Livro.h"
+#include"Operacoes.h"
 #include<fstream>
+#include <iterator>
+
 Livro::Livro(int id, string nome, EGenero genero, bool active){
     _id = id;
     _nome = nome;
@@ -11,52 +14,17 @@ int Livro::GetId(){
 }
 vector<Livro> Livro::CarregarLivrosSalvos(){
     vector<Livro> livrosSalvos;
+    vector<string> value;
     string conteudo = "";
     ifstream arq("Livros.txt");
-    string id,nome,genero,state = "";
-    long unsigned int i =0;
+
     if (arq.is_open())
     {
-        while (getline(arq, conteudo)){
-            
-            for ( i = 0; i < conteudo.size(); i++)
-            {
-                if(conteudo[i] != ','){
-                    id += conteudo[i] ;
-                } else{
-                    break;
-                }
-            }
-            for ( i = i+1; i < conteudo.size(); i++)
-            {
-                if(conteudo[i] != ','){
-                    nome += conteudo[i] ;
-                } else{
-                    break;
-                }
-            }
-            for ( i = i+1; i < conteudo.size(); i++)
-            {
-                if(conteudo[i] != ','){
-                    genero += conteudo[i] ;
-                } else{
-                    break;
-                }
-            }
-            for ( i = i+1; i < conteudo.size(); i++)
-            {
-                if(conteudo[i] != ','){
-                    state += conteudo[i] ;
-                } else{
-                    break;
-                }
-            }
-            Livro livro = Livro(stoi(id),nome, static_cast<EGenero>(stoi(genero)),state == "A");
+        while (getline(arq, conteudo)){            
+            Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));     
+            Livro livro = Livro(stoi(value[0]),value[1], static_cast<EGenero>(stoi(value[2])),value[3] == "A");
             livrosSalvos.push_back(livro);
-            nome = "";
-            genero = "";
-            id = "";
-            state = "";
+            value.clear();
         }
     }   
     return livrosSalvos;
