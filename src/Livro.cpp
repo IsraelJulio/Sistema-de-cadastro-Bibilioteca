@@ -12,8 +12,19 @@ Livro::Livro(int id, string nome, EGenero genero, bool active){
 int Livro::GetId(){
     return _id;
 }
-vector<Livro> Livro::CarregarLivrosSalvos(){
-    vector<Livro> livrosSalvos;
+
+string Livro::GetName(){
+    return _nome;
+}
+
+EGenero Livro::GetGenre(){
+    return _genero;
+}
+bool Livro::GetStats(){
+    return _active;
+}
+vector<Livro*> Livro::CarregarLivrosSalvos(){
+    vector<Livro*> livrosSalvos;
     vector<string> value;
     string conteudo = "";
     ifstream arq("Livros.txt");
@@ -22,7 +33,7 @@ vector<Livro> Livro::CarregarLivrosSalvos(){
     {
         while (getline(arq, conteudo)){            
             Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));     
-            Livro livro = Livro(stoi(value[0]),value[1], static_cast<EGenero>(stoi(value[2])),value[3] == "A");
+            Livro* livro = new Livro(stoi(value[0]),value[1], static_cast<EGenero>(stoi(value[2])),value[3] == "A");
             livrosSalvos.push_back(livro);
             value.clear();
         }
@@ -31,7 +42,7 @@ vector<Livro> Livro::CarregarLivrosSalvos(){
 }
 
 void Livro::Imprime(){
-    cout << _id << "- " << _nome << " | " << GetEnum(_genero) << endl;
+    cout << _id << " - " << _nome << " | " << GetEnum(_genero) << endl;
 }
 
 string Livro::GetEnum(EGenero EnumId){
@@ -72,13 +83,13 @@ string Livro::GetEnum(EGenero EnumId){
     return result;
 }
 
-Livro Livro::GetById(int id){
-    vector<Livro> livrosSalvos = Livro::CarregarLivrosSalvos();
-    for(auto it = livrosSalvos.begin(); it <= livrosSalvos.end(); ++it) {
+Livro* Livro::GetById(int id){
+    vector<Livro*> livrosSalvos = Livro::CarregarLivrosSalvos();
+    for(auto it : livrosSalvos) {
         if(it->GetId() == id) {
-            return *it;       
+            return it;       
         }
     }
-    Livro t = Livro(0,"",EGenero::AVENTURA,false);
+    Livro* t = new Livro(0,"",EGenero::AVENTURA,false);
     return t;
 }

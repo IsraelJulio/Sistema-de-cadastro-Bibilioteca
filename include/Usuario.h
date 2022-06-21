@@ -8,13 +8,14 @@ using namespace std;
 
 class Usuario : public User{
     private:
-    vector<Livro*> _meusLivros;
         
     public:
+    vector<Livro*> _meusLivros;
     bool Reservar(int LivroId);
     vector<Livro> ListarReservados();
     Usuario(string nome, string matricula, EPerfil perfil);
     Usuario(string nome, string matricula, EPerfil perfil,vector<Livro*> livros);
+    void Imprime() override;
 
 };
 

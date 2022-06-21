@@ -1,7 +1,9 @@
 #include "User.h"
 #include "Usuario.h"
 #include "Administrador.h"
+#include"Operacoes.h"
 #include<fstream>
+#include <iterator>
 
 User::User(string nome, string matricula, EPerfil perfil){
     _nome = nome;
@@ -9,100 +11,34 @@ User::User(string nome, string matricula, EPerfil perfil){
     _perfil = perfil;
 }
 
-vector<User*> CarregarUsuarios(){
+vector<User*> User::CarregarUsuarios(){
     vector<User*> usuariosSalvos;
     vector<Livro*> livrosSalvos;
     string conteudo = "";
     ifstream arq("Usuarios.txt");
-    string nome,matricula,perfil = "";
-
-    string id,genero,state = "";
-    long unsigned int i =0;
+    vector<string> value;
     if (arq.is_open())
     {
         while (getline(arq, conteudo)){
-
-            for ( i = i+1; i < conteudo.size(); i++)
+          Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));    
+          if (value.size() < 4)
+          {
+            Administrador* admin = new Administrador(value[0],value[1],static_cast<EPerfil>(stoi(value[2])));
+            usuariosSalvos.push_back(admin);
+          } else {
+            for (long unsigned int o = 3; o < value.size(); o++)
             {
-                if(conteudo[i] != ','){
-                    nome += conteudo[i] ;
-                } else{
-                    break;
-                }
+                auto lv = Livro::GetById(stoi(value[o]));
+                Livro* livro = new Livro(lv->GetId(),lv->GetName(), lv->GetGenre(),lv->GetStats());                        
+                livrosSalvos.push_back(livro);                
             }
-            for ( i = i+1; i < conteudo.size(); i++)
-            {
-                if(conteudo[i] != ','){
-                    matricula += conteudo[i] ;
-                } else{
-                    break;
-                }
-            }
-            for ( i = i+1; i < conteudo.size(); i++)
-            {
-                if(conteudo[i] != ',' || conteudo[i] != ';'){
-                    perfil += conteudo[i] ;
-                } else{
-                    break;
-                }
-            }
-            if(conteudo[i+1] != ';'){                  
-                while (conteudo[i+1] != ';')
-                {                
-                    for ( i = 0; i < conteudo.size(); i++)
-                    {
-                        if(conteudo[i] != ','){
-                            id += conteudo[i] ;
-                        } else{
-                            break;
-                        }
-                    }
-                    for ( i = i+1; i < conteudo.size(); i++)
-                    {
-                        if(conteudo[i] != ','){
-                            nome += conteudo[i] ;
-                        } else{
-                            break;
-                        }
-                    }
-                    for ( i = i+1; i < conteudo.size(); i++)
-                    {
-                        if(conteudo[i] != ','){
-                            genero += conteudo[i] ;
-                        } else{
-                            break;
-                        }
-                    }
-                    for ( i = i+1; i < conteudo.size(); i++)
-                    {
-                        if(conteudo[i] != ','){
-    
-                         if(conteudo[i] != ','){
-                            state += conteudo[i] ;
-                        } else{
-                            break;
-                            }
-                        }
-                    
-                    }
-                    Livro* livro = new Livro(stoi(id),nome, static_cast<EGenero>(stoi(genero)),state == "A");                        
-                    livrosSalvos.push_back(livro);
-                }
-                Usuario* user = new Usuario(nome,matricula,static_cast<EPerfil>(stoi(perfil)),livrosSalvos);
-                usuariosSalvos.push_back(user);
-            }
-            else{
-                Administrador* admin = new Administrador(nome,matricula,static_cast<EPerfil>(stoi(perfil)));
-                usuariosSalvos.push_back(admin);
-            }
-            
-            nome = "";
-            genero = "";
-            id = "";
-            state = "";
-            matricula = "";
-            perfil = "";
+            Usuario* user = new Usuario(value[0],value[1],static_cast<EPerfil>(stoi(value[2])));
+            user->_meusLivros = livrosSalvos;
+            usuariosSalvos.push_back(user);
+          }
+          value.clear();
         }
     }   
     return usuariosSalvos;
 }
+

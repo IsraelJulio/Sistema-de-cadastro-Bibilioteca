@@ -16,11 +16,14 @@ class Livro{
         
     public:
         Livro(int id, string nome, EGenero genero, bool active);
-        static vector<Livro> CarregarLivrosSalvos();
+        static vector<Livro*> CarregarLivrosSalvos();
         void Imprime();
         string GetEnum(EGenero EnumId);
-        static Livro GetById(int id);
+        static Livro* GetById(int id);
         int GetId();      
+        string GetName();      
+        EGenero GetGenre();  
+        bool GetStats();    
 };
 
 #endif
