@@ -18,3 +18,11 @@ vector<Livro*> Administrador::ListarLivrosBloqueados(vector<Livro*> livrosSalvos
 
     return livrosBloqueados;
 }
+
+vector<User*> Administrador::ListarUsuariosAtivos(vector<User*> usuarios){
+    vector<User*> usuariosAtivos;
+
+    for(std::vector<User*>::iterator it = usuarios.begin(); it != usuarios.end(); it++){
+        //O QUE DEFINE SE O USUÁRIO ESTÁ ATIVO OU NÃO NA CLASSE USUÁRIO?
+    }
+}
