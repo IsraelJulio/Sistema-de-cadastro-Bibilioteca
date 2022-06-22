@@ -11,6 +11,7 @@ class Administrador: public User{
     public:
         Administrador(string nome, string matricula, EPerfil perfil);
         void Imprime() override;
+        vector<Livro*>ListarLivrosBloqueados(vector<Livro*> livros);
 };
 
 #endif
