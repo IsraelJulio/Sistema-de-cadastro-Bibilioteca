@@ -23,6 +23,5 @@ int main() {
         u->Imprime();
     }
 
-
     return 0;
 }
