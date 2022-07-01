@@ -20,6 +20,7 @@ class Administrador: public User{
         bool Cadastro(Usuario* Usuario);
         bool CadastrarLivro(int id, string nome, EGenero genero);
         bool EditarUsuário(string matricula);
+
 };
 
 #endif
