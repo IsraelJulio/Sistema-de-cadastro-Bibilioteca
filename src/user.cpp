@@ -1,14 +1,23 @@
-#include "User.h"
-#include "Usuario.h"
-#include "Administrador.h"
-#include"Operacoes.h"
+#include "../include/User.h"
+#include "../include/Usuario.h"
+#include "../include/Administrador.h"
+#include"../include/Operacoes.h"
 #include<fstream>
 #include <iterator>
+
+User::User(string nome, string matricula, EPerfil perfil, bool active){
+    _nome = nome;
+    _matricula = matricula;
+    _perfil = perfil;
+    _active = active;
+}
 
 User::User(string nome, string matricula, EPerfil perfil){
     _nome = nome;
     _matricula = matricula;
     _perfil = perfil;
+    _active = true;
+
 }
 
 vector<User*> User::CarregarUsuarios(){
@@ -40,5 +49,13 @@ vector<User*> User::CarregarUsuarios(){
         }
     }   
     return usuariosSalvos;
+}
+
+bool User::GetStatusUser(){
+    return _active;
+}
+
+string User::GetMatricula(){
+  return _matricula;
 }
 
