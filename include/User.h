@@ -14,11 +14,14 @@ class User{
         string _nome;
         string _matricula;
         EPerfil _perfil;
+        bool _active;
     public:
         vector<Livro*>ListarLivrosDisponiveis();
+        User(string nome, string matricula, EPerfil perfil, bool active);
         User(string nome, string matricula, EPerfil perfil);
         static vector<User*> CarregarUsuarios();
         virtual void Imprime() = 0;
+        bool GetStatusUser();
         
 };
 
