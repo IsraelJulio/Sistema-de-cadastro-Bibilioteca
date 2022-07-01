@@ -15,7 +15,7 @@ class Usuario : public User{
     vector<Livro> ListarReservados();
     Usuario(string nome, string matricula, EPerfil perfil);
     Usuario(string nome, string matricula, EPerfil perfil,vector<Livro*> livros);
-    void Imprime() override;
+    virtual void Imprime() override;
 
 };
 
