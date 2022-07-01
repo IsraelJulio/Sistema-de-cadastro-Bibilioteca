@@ -55,3 +55,7 @@ bool User::GetStatusUser(){
     return _active;
 }
 
+string User::GetMatricula(){
+  return _matricula;
+}
+

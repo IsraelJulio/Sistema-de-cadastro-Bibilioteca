@@ -3,16 +3,23 @@
 #include<vector>
 #include"User.h"
 #include"Livro.h"
+#include "Usuario.h"
 using namespace std;
 
 class Administrador: public User{
     private:
+        vector<User*> _usuariosAtivos;
+        vector<Livro*> _livrosBloqueados;
+        vector<Livro*> _livrosDevolvidos;
 
     public:
         Administrador(string nome, string matricula, EPerfil perfil);
         void Imprime() override;
         vector<Livro*>ListarLivrosBloqueados(vector<Livro*> livros);
         vector<User*>ListarUsuariosAtivos(vector<User*> usuarios);
+        bool Cadastro(Usuario* Usuario);
+        bool CadastrarLivro(int id, string nome, EGenero genero);
+        bool EditarUsuário(string matricula);
 };
 
 #endif

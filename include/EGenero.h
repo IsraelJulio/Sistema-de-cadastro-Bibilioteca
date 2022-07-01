@@ -1,6 +1,8 @@
 #ifndef EGenero_H
 #define EGenero_H
 
+#include <iostream>
+
 using namespace std;
 
 enum class EGenero{

@@ -1,11 +1,8 @@
+#include "../include/Livro.h"
+#include "../include/User.h"
+#include "../include/Operacoes.h"
+
 using namespace std;
-
-
-#include "Livro.h"
-#include "User.h"
-#include "Operacoes.h"
-
-
 
 int main() {
 

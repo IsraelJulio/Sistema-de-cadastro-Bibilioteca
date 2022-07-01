@@ -22,6 +22,7 @@ class User{
         static vector<User*> CarregarUsuarios();
         virtual void Imprime() = 0;
         bool GetStatusUser();
+        string GetMatricula();
         
 };
 

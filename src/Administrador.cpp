@@ -7,26 +7,51 @@ void Administrador::Imprime(){
     return;
 }
 
-vector<Livro*> Administrador::ListarLivrosBloqueados(vector<Livro*> livrosSalvos){
-    vector<Livro*> livrosBloqueados;
+vector<Livro*> Administrador::ListarLivrosBloqueados(vector<Livro*> livrosSalvos){  
 
     for(std::vector<Livro*>::iterator it = livrosSalvos.begin(); it != livrosSalvos.end(); it++){
        if((*it)->GetStats() == true){
-        livrosBloqueados.push_back(*it);
+        for(std::vector<Livro*>::iterator it2 = _livrosBloqueados.begin(); it2 != _livrosBloqueados.end(); it2++){
+            if((*it2)!=(*it)){                              //verifica se o livro já está na lista de livros bloqueados
+                _livrosBloqueados.push_back(*it);
+                break;
+            }
+        }
        }
     }
-
-    return livrosBloqueados;
+    return _livrosBloqueados;
 }
 
 vector<User*> Administrador::ListarUsuariosAtivos(vector<User*> usuarios){
-    vector<User*> usuariosAtivos;
 
     for(std::vector<User*>::iterator it = usuarios.begin(); it != usuarios.end(); it++){
         if((*it)->GetStatusUser() == true){
-        usuariosAtivos.push_back(*it);
+         for(std::vector<User*>::iterator it2 = _usuariosAtivos.begin(); it2 != _usuariosAtivos.end(); it2++){
+                if((*it2)!=(*it)){                            //verifica se o usuário já está na lista de usuarios ativos
+                _usuariosAtivos.push_back(*it);
+                break;
+                }
+        }
        }
     }
+    return _usuariosAtivos;
+}
 
-    return usuariosAtivos;
+bool Administrador::Cadastro(Usuario* Usuario){
+
+    for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){
+        if((*it)->GetMatricula() == Usuario->GetMatricula()) return false;
+    }
+
+    _usuariosAtivos.push_back(Usuario);
+    return true;
+
+}
+
+bool Administrador::CadastrarLivro(int id, string nome, EGenero genero){
+
+}
+
+bool EditarUsuário(string matricula){
+
 }
