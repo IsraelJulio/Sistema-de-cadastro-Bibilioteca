@@ -48,10 +48,6 @@ bool Administrador::Cadastro(Usuario* Usuario){
 
 }
 
-bool Administrador::CadastrarLivro(int id, string nome, EGenero genero){
+bool Administrador::CadastrarLivro(int id, string nome, EGenero genero){return true;}
 
-}
-
-bool EditarUsuário(string matricula){
-
-}
+bool EditarUsuario(string matricula){return true;}

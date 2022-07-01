@@ -14,12 +14,12 @@ class Administrador: public User{
 
     public:
         Administrador(string nome, string matricula, EPerfil perfil);
-        void Imprime() override;
+        virtual void Imprime() override;
         vector<Livro*>ListarLivrosBloqueados(vector<Livro*> livros);
         vector<User*>ListarUsuariosAtivos(vector<User*> usuarios);
         bool Cadastro(Usuario* Usuario);
         bool CadastrarLivro(int id, string nome, EGenero genero);
-        bool EditarUsuário(string matricula);
+        bool EditarUsuario(string matricula);
 
 };
 

@@ -3,3 +3,4 @@
 3,A mão esquerda de Deus,4,A,
 4,Fundamentos da Quimica,2,A,
 5,Dom Casmurro,6,A,
+6,Habitos Atomicos,3,A,

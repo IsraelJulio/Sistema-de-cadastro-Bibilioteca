@@ -7,7 +7,7 @@ Usuario::Usuario(string nome, string matricula, EPerfil perfil,vector<Livro*> li
 }
 void Usuario::Imprime(){
     cout << _nome << " : " << _matricula << "." << endl;
-    cout << "Livros: ";
+    cout << "Livros: " << endl;
     for(auto lv : _meusLivros)
     {
         lv->Imprime();
