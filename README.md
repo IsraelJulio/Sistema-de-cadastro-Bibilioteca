@@ -75,9 +75,23 @@ Projeto final de PDSII visando o sistema de cadastro de livros em uma biblioteca
 
 *Uma vez que os requisitos iniciais foram preenchidos, partiremos para a instalação do sistema:*
 ### Instalação:
+*Faça os seguintes procedimentos no terminal da sua IDE (considerando o uso em WSL):*
+
 1) Clone o repositório:
 
    ```sh
    git clone https://github.com/filipefsf/Sistema-de-cadastro-Bibilioteca.git
    ```
-      
+   
+2) Acesse o diretório do repositório:
+
+   ```sh
+   cd Sistema-de-cadastro-Bibilioteca
+   ```
+
+3) Execute o comando "make":
+
+   ```sh
+   make
+   ```
+
