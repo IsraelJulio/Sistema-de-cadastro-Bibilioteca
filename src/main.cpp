@@ -6,14 +6,14 @@ using namespace std;
 
 int main() {
 
-    // vector<Livro*> livrosSalvos = Livro::CarregarLivrosSalvos();
+    vector<Livro*> livrosSalvos = Livro::CarregarLivrosSalvos();
     
-    // for (auto livro : livrosSalvos)
-    // {
-    //      livro->Imprime();
-    // } 
+    for (auto livro : livrosSalvos)
+    {
+         livro->Imprime();
+    } 
      
-    vector<User*> usersSalvos = User::CarregarUsuarios();
+    vector<User*> usersSalvos = User::GetAllUsers();
 
     for(auto u : usersSalvos)
     {

@@ -20,7 +20,7 @@ User::User(string nome, string matricula, EPerfil perfil){
 
 }
 
-vector<User*> User::CarregarUsuarios(){
+vector<User*> User::GetAllUsers(){
     vector<User*> usuariosSalvos;
     vector<Livro*> livrosSalvos;
     string conteudo = "";
@@ -47,6 +47,7 @@ vector<User*> User::CarregarUsuarios(){
           }
           value.clear();
         }
+        arq.close();
     }   
     return usuariosSalvos;
 }

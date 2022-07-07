@@ -19,8 +19,9 @@ class User{
         vector<Livro*>ListarLivrosDisponiveis();
         User(string nome, string matricula, EPerfil perfil, bool active);
         User(string nome, string matricula, EPerfil perfil);
-        static vector<User*> CarregarUsuarios();
+        static vector<User*> GetAllUsers();
         virtual void Imprime() = 0;
+        virtual string GetDados() = 0;
         bool GetStatusUser();
         string GetMatricula();
         
