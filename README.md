@@ -94,4 +94,12 @@ Projeto final de PDSII visando o sistema de cadastro de livros em uma biblioteca
    ```sh
    make
    ```
+   
+4) Para rodar o programa, digite o seguinte comando:
+
+   ```sh
+   ./main
+   ```
+  
+
 
