@@ -1,7 +1,7 @@
-#include "../include/User.h"
-#include "../include/Usuario.h"
-#include "../include/Administrador.h"
-#include"../include/Operacoes.h"
+#include "../include/User.hpp"
+#include "../include/Usuario.hpp"
+#include "../include/Administrador.hpp"
+#include"../include/Operacoes.hpp"
 #include<fstream>
 #include <iterator>
 

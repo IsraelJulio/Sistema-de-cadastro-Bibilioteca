@@ -4,7 +4,7 @@
 #include<string>
 #include<vector>
 
-#include "EGenero.h"
+#include "EGenero.hpp"
 using namespace std;
 
 class Livro{

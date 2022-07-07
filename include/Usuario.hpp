@@ -1,8 +1,8 @@
 #ifndef Usuario_H
 #define Usuario_H
 #include<vector>
-#include"User.h"
-#include"Livro.h"
+#include"User.hpp"
+#include"Livro.hpp"
 
 using namespace std;
 
