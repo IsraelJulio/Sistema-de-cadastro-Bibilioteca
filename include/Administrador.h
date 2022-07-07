@@ -17,9 +17,10 @@ class Administrador: public User{
         virtual void Imprime() override;
         vector<Livro*>ListarLivrosBloqueados(vector<Livro*> livros);
         vector<User*>ListarUsuariosAtivos(vector<User*> usuarios);
-        bool SetUsuario(Usuario* Usuario);
+        bool SetUsuario(User* Usuario);
         bool SetLivro(int id, string nome, EGenero genero);
         bool EditarUsuario(string matricula);
+        bool AtualizarListaDeUsuarios(vector<User *> list);
         virtual string GetDados() override;
 };
 

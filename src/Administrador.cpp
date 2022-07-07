@@ -40,7 +40,7 @@ vector<User*> Administrador::ListarUsuariosAtivos(vector<User*> usuarios){
     return _usuariosAtivos;
 }
 
-bool Administrador::SetUsuario(Usuario* Usuario){
+bool Administrador::SetUsuario(User* Usuario){
     _usuariosAtivos = User::GetAllUsers();
 
     for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){
@@ -48,16 +48,18 @@ bool Administrador::SetUsuario(Usuario* Usuario){
     }
 
     _usuariosAtivos.push_back(Usuario);
-
-    return true;
+    bool result = Administrador::AtualizarListaDeUsuarios(_usuariosAtivos);
+    return result;
 
 }
+
+
 
 bool Administrador::SetLivro(int id, string nome, EGenero genero){return true;}
 
 bool EditarUsuario(string matricula){return true;}
 
-void AtualizarListaDeUsuarios(vector<User *> list){
+bool Administrador::AtualizarListaDeUsuarios(vector<User *> list){
 
 ofstream myfile ("Usuarios.txt");
  if (myfile.is_open())
@@ -69,9 +71,9 @@ ofstream myfile ("Usuarios.txt");
     }
     myfile.close();
   }
-  else cout << "Unable to open file";
+  else return false;
 
-  return;
+  return true;
 
 }
 

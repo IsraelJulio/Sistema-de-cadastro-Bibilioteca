@@ -20,9 +20,10 @@ string Usuario::GetDados(){
 }
 
 string Usuario::GetMyBooks(){
-    auto result = "";
+    string result = "";
     for(auto id : _meusLivros)
     {
-        result += id->GetId();
+        result += id->GetId() + ",";
     }
+    return result;
 }
