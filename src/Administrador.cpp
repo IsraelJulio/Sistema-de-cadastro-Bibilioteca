@@ -1,5 +1,8 @@
 #include "../include/Administrador.h"
 
+#include <iostream>
+#include <fstream>
+
 Administrador::Administrador(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
 
 void Administrador::Imprime(){
@@ -37,17 +40,43 @@ vector<User*> Administrador::ListarUsuariosAtivos(vector<User*> usuarios){
     return _usuariosAtivos;
 }
 
-bool Administrador::Cadastro(Usuario* Usuario){
+bool Administrador::SetUsuario(User* Usuario){
+    _usuariosAtivos = User::GetAllUsers();
 
     for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){
         if((*it)->GetMatricula() == Usuario->GetMatricula()) return false;
     }
 
     _usuariosAtivos.push_back(Usuario);
-    return true;
+    bool result = Administrador::AtualizarListaDeUsuarios(_usuariosAtivos);
+    return result;
 
 }
 
-bool Administrador::CadastrarLivro(int id, string nome, EGenero genero){return true;}
+
+
+bool Administrador::SetLivro(int id, string nome, EGenero genero){return true;}
 
 bool EditarUsuario(string matricula){return true;}
+
+bool Administrador::AtualizarListaDeUsuarios(vector<User *> list){
+
+ofstream myfile ("Usuarios.txt");
+ if (myfile.is_open())
+  {
+
+    for( auto u : list )
+    {
+        myfile << u->GetDados() << endl;
+    }
+    myfile.close();
+  }
+  else return false;
+
+  return true;
+
+}
+
+string Administrador::GetDados(){
+    return this->_nome + "," + this->_matricula + ",1;";    
+}

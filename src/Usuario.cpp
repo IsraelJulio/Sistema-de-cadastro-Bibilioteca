@@ -14,3 +14,16 @@ void Usuario::Imprime(){
     }
     return;
 }
+
+string Usuario::GetDados(){
+    return this->_nome + "," + this->_matricula + ",2," + GetMyBooks();    
+}
+
+string Usuario::GetMyBooks(){
+    string result = "";
+    for(auto id : _meusLivros)
+    {
+        result += id->GetId() + ",";
+    }
+    return result;
+}
