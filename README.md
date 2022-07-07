@@ -80,7 +80,7 @@ Projeto final de PDSII visando o sistema de cadastro de livros em uma biblioteca
 1) Clone o repositório:
 
    ```sh
-   git clone https://github.com/filipefsf/Sistema-de-cadastro-Bibilioteca.git
+   git clone https://github.com/filipefsf/cadastrobiblioteca.git
    ```
    
 2) Acesse o diretório do repositório:
