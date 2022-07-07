@@ -64,4 +64,10 @@ Projeto final de PDSII visando o sistema de cadastro de livros em uma biblioteca
     d) Exibir lista de livros devolvidos.
     
  ## 💻 QUERO FAZER USO DO SISTEMA, POR ONDE COMEÇAR❓
+ *Para fazer uso do repositório, você precisa preencher as requisições abaixo:*
+ 1) Possuir um compilador C++ instalado (recomendamos o Visual Studio Code);
+ 2) Ter um sistema operacional LINUX ou uma interface com este.
+ 3) Instalar a extensão "cmake" no seu compilador;
+ 4) Possuir o git instalado e devidamente logado na IDE em questão;
+ 5) Possuir a IDE configurada para uso em WSL;
       
