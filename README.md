@@ -86,7 +86,7 @@ Projeto final de PDSII visando o sistema de cadastro de livros em uma biblioteca
 2) Acesse o diretório do repositório:
 
    ```sh
-   cd Sistema-de-cadastro-Bibilioteca
+   cd cadastrobiblioteca
    ```
 
 3) Execute o comando "make":
