@@ -65,9 +65,19 @@ Projeto final de PDSII visando o sistema de cadastro de livros em uma biblioteca
     
  ## 💻 QUERO FAZER USO DO SISTEMA, POR ONDE COMEÇAR❓
  *Para fazer uso do repositório, você precisa preencher as requisições abaixo:*
+ 
+ ### Requisitos iniciais:
  1) Possuir um compilador C++ instalado (recomendamos o Visual Studio Code);
  2) Ter um sistema operacional LINUX ou uma interface com este.
  3) Instalar a extensão "cmake" no seu compilador;
  4) Possuir o git instalado e devidamente logado na IDE em questão;
  5) Possuir a IDE configurada para uso em WSL;
+
+*Uma vez que os requisitos iniciais foram preenchidos, partiremos para a instalação do sistema:*
+### Instalação:
+1) Clone o repositório:
+
+   ```sh
+   git clone https://github.com/filipefsf/Sistema-de-cadastro-Bibilioteca.git
+   ```
       
