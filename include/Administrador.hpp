@@ -28,6 +28,7 @@ class Administrador: public User{
         virtual string GetDados() override;
         void Updatebkp();
         void Updatesrc();
+        bool Devolucao(string matricula, int id);
 };
 
 #endif

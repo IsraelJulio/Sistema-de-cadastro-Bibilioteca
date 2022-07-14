@@ -92,8 +92,7 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
             else 
             {
                 if (value[1] == matricula)
-                {
-                         
+                {                        
                     for (long unsigned int o = 3; o < value.size(); o++)
                     {
                         if(stoi(value[o]) == id) {
@@ -186,4 +185,68 @@ void Administrador::Updatesrc()
     ifstream  src("Usuarios_bkp.txt", std::ios::binary);
     ofstream  dst("Usuarios.txt",   std::ios::binary);
     dst << src.rdbuf();
+}
+
+bool Administrador::Devolucao(string matricula, int id)
+{
+    vector<User*> usuariosSalvos = User::GetAllUsers();
+    vector<Livro*> livrosSalvos;
+    ifstream arq("Usuarios.txt");
+    string conteudo = "";
+    vector<string> value;
+    string livros ="";
+    bool eq = false;
+    // std::ofstream ofs("test.txt", std::ofstream::trunc);
+    ofstream beckup ("Usuarios_bkp.txt", std::ofstream::trunc);
+    string _id = to_string(id);
+
+    if(!validarMatricula(matricula))
+        return false; // todo exceção;
+    if(!validarLivro(id))
+        return false; // todo exceção;
+    
+     if (arq.is_open())
+    {
+        if (beckup.is_open())
+         {
+            while (getline(arq, conteudo)){
+                Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));
+            if (stoi(value[2]) != 2)
+                beckup << value[0] <<"," << value[1] <<"," << value[2]<<endl;
+            else 
+            {
+                if (value[1] == matricula)
+                {                        
+                    for (long unsigned int o = 3; o < value.size(); o++)
+                    {
+                        if(stoi(value[o]) == id)
+                            eq = true; 
+                        else                                  
+                            livros += "," + value[o]; 
+                    }
+                    if(!eq){
+                        return false; // Todo Exceção                        
+                    }
+                }else
+                    {
+
+                        for (long unsigned int o = 3; o < value.size(); o++)
+                        {
+                            livros += "," + value[o]; 
+             
+                        }
+                        
+                    }
+                beckup << value[0] <<"," << value[1] <<",2" <<  livros << endl;
+                livros = "";
+
+            }
+          value.clear();
+            }
+        }
+        beckup.close();
+    }
+    arq.close();
+    Updatesrc();  
+    return true;
 }

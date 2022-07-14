@@ -7,17 +7,6 @@ using namespace std;
 
 int main() {
 
-    Administrador admin = Administrador("novo admin","0000001",EPerfil::ADMIN);     
-    
-    // Usuario novo = Usuario("novo usuario comum 2", "000000002", EPerfil::USER);
-
-
-   
-    admin.SetLivroByUsuario(1,"000000002");
-     
-
-
-
  vector<User*> usersSalvos = User::GetAllUsers();
 
     for(auto u : usersSalvos)
@@ -25,6 +14,24 @@ int main() {
         u->Imprime();
     }
     cout << endl << endl;
+    Administrador admin = Administrador("novo admin","0000001",EPerfil::ADMIN);     
+    
+    // Usuario novo = Usuario("novo usuario comum 2", "000000002", EPerfil::USER);
+
+
+   
+    admin.Devolucao("000000002",4);
+     
+
+usersSalvos = User::GetAllUsers();
+
+    for(auto u : usersSalvos)
+    {
+        u->Imprime();
+    }
+    cout << endl << endl;
+
+
 
     return 0;
 }
