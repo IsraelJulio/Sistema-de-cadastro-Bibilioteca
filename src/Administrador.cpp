@@ -1,5 +1,5 @@
 #include "../include/Administrador.hpp"
-
+#include"../include/Operacoes.hpp"
 #include <iostream>
 #include <fstream>
 
@@ -53,9 +53,95 @@ bool Administrador::SetUsuario(User* Usuario){
 
 }
 
-
+bool Administrador::removerUsuario(string matricula, vector<User *> list)
+{
+  for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){
+        if((*it)->GetMatricula() == matricula) return false;
+    }
+    return true;
+}
 
 bool Administrador::SetLivro(int id, string nome, EGenero genero){return true;}
+
+bool Administrador::SetLivroByUsuario(int id, string matricula)
+{
+    vector<User*> usuariosSalvos;
+    vector<Livro*> livrosSalvos;
+    ifstream arq("Usuarios_bkp.txt");
+    string conteudo = "";
+    vector<string> value;
+    vector<string> livros;
+    bool eq = false;
+
+    if(!validarMatricula(matricula))
+        return false; // todo exceção;
+    if(!validarLivro(id))
+        return false; // todo exceção;
+    auto _id = Livro::GetById(id);
+    
+     if (arq.is_open())
+    {
+        while (getline(arq, conteudo)){
+            Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));
+cout<< endl << "é isso: (";
+cout << value[2];
+cout << ")"<< endl << endl;
+          if (stoi(value[2]) != 2)
+          {
+            Administrador* admin = new Administrador(value[0],value[1],static_cast<EPerfil>(stoi(value[2])));
+            usuariosSalvos.push_back(admin);
+          } else {
+            if (value[1] == matricula)
+            {
+                for (long unsigned int o = 3; o < value.size(); o++)
+                {        
+                    if(stoi(value[o]) == id)            
+                        eq = true; 
+                    
+                    auto lv = Livro::GetById(stoi(value[o]));
+                Livro* livro = new Livro(lv->GetId(),lv->GetName(), lv->GetGenre(),lv->GetStats());                        
+                livrosSalvos.push_back(livro); 
+                }
+                if(!eq)
+                    livrosSalvos.push_back(_id);                    
+            }    
+
+            for (long unsigned int o = 3; o < value.size(); o++)
+            {
+                auto lv = Livro::GetById(stoi(value[o]));
+                Livro* livro = new Livro(lv->GetId(),lv->GetName(), lv->GetGenre(),lv->GetStats());                        
+                livrosSalvos.push_back(livro);                
+            }
+            Usuario* user = new Usuario(value[0],value[1],static_cast<EPerfil>(stoi(value[2])));
+            user->_meusLivros = livrosSalvos;
+            usuariosSalvos.push_back(user);
+          }
+          value.clear();
+        }
+        arq.close();
+        AtualizarListaDeUsuarios(usuariosSalvos);
+    }
+    return true;
+}
+
+bool Administrador::validarMatricula(string matricula)
+{
+    _usuariosAtivos = User::GetAllUsers();
+     for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){ // validar matricula
+        if((*it)->GetMatricula() == matricula) return true;
+    }
+    return false;
+}
+
+bool Administrador::validarLivro(int id)
+{
+    auto livros = Livro::CarregarLivrosSalvos();
+     for(std::vector<Livro*>::iterator it = livros.begin(); it != livros.end(); it++){ // validar matricula
+        if((*it)->GetId() == id) return true;
+    }
+    return false;
+}
+
 
 bool EditarUsuario(string matricula){return true;}
 
@@ -79,12 +165,11 @@ ofstream myfile ("Usuarios.txt");
 }
 
 string Administrador::GetDados(){
-    return this->_nome + "," + this->_matricula + ",1;";    
+    return this->_nome + "," + this->_matricula + ",1";    
 }
 
 void Administrador::Updatebkp()
 {
-    cout << "chamou";
     ifstream  src("Usuarios.txt", std::ios::binary);
     ofstream  dst("Usuarios_bkp.txt",   std::ios::binary);
     dst << src.rdbuf();

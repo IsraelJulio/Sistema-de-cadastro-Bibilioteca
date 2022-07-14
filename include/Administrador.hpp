@@ -21,6 +21,10 @@ class Administrador: public User{
         bool SetLivro(int id, string nome, EGenero genero);
         bool EditarUsuario(string matricula);
         bool AtualizarListaDeUsuarios(vector<User *> list);
+        bool SetLivroByUsuario(int id, string matricula);
+        bool validarMatricula(string matricula);
+        bool validarLivro(int id);
+        bool removerUsuario(string matricula, vector<User *> list);
         virtual string GetDados() override;
         void Updatebkp();
 };
