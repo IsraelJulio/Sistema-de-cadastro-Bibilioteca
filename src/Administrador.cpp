@@ -103,8 +103,7 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
                     livros += "," + value[o]; 
                     }
                     if(!eq){
-                        // livros += "," +_id;                          
-                        livros += ",856";                          
+                        livros += "," +_id;                        
                     }
                 }else
                     {
@@ -116,7 +115,7 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
                         }
                         
                     }
-                beckup << value[0] <<"," << value[1] <<"," << value[2]<< livros;
+                beckup << value[0] <<"," << value[1] <<",2" <<  livros << endl;
                 livros = "";
 
             }
