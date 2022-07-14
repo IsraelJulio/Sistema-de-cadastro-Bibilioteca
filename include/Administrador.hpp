@@ -22,6 +22,7 @@ class Administrador: public User{
         bool EditarUsuario(string matricula);
         bool AtualizarListaDeUsuarios(vector<User *> list);
         virtual string GetDados() override;
+        void Updatebkp();
 };
 
 #endif

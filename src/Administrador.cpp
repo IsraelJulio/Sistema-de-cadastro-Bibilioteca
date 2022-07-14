@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 
+
 Administrador::Administrador(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
 
 void Administrador::Imprime(){
@@ -41,12 +42,11 @@ vector<User*> Administrador::ListarUsuariosAtivos(vector<User*> usuarios){
 }
 
 bool Administrador::SetUsuario(User* Usuario){
-    _usuariosAtivos = User::GetAllUsers();
 
+    _usuariosAtivos = User::GetAllUsers();
     for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){
         if((*it)->GetMatricula() == Usuario->GetMatricula()) return false;
     }
-
     _usuariosAtivos.push_back(Usuario);
     bool result = Administrador::AtualizarListaDeUsuarios(_usuariosAtivos);
     return result;
@@ -71,12 +71,21 @@ ofstream myfile ("Usuarios.txt");
     }
     myfile.close();
   }
-  else return false;
+  else { cout << "chamou retorna" ;return false;}
 
+  this->Updatebkp();
   return true;
 
 }
 
 string Administrador::GetDados(){
     return this->_nome + "," + this->_matricula + ",1;";    
+}
+
+void Administrador::Updatebkp()
+{
+    cout << "chamou";
+    ifstream  src("Usuarios.txt", std::ios::binary);
+    ofstream  dst("Usuarios_bkp.txt",   std::ios::binary);
+    dst << src.rdbuf();
 }
