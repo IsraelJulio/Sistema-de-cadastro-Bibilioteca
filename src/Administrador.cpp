@@ -124,12 +124,8 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
         }
         beckup.close();
     }
-        arq.close();
-
-
-
-        // AtualizarListaDeUsuarios(usuariosSalvos);
-    
+    arq.close();
+    Updatesrc();    
 
     return true;
 }
@@ -182,5 +178,12 @@ void Administrador::Updatebkp()
 {
     ifstream  src("Usuarios.txt", std::ios::binary);
     ofstream  dst("Usuarios_bkp.txt",   std::ios::binary);
+    dst << src.rdbuf();
+}
+
+void Administrador::Updatesrc()
+{
+    ifstream  src("Usuarios_bkp.txt", std::ios::binary);
+    ofstream  dst("Usuarios.txt",   std::ios::binary);
     dst << src.rdbuf();
 }

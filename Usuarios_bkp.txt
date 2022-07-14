@@ -2,4 +2,4 @@ Israel Jhonatas,2020027008,1
 Usuario comum,123456,2,1,2,3
 Usuario comum,123456,1
 novo admin,0000001,1
-novo usuario comum 2,000000002,2,4
+novo usuario comum 2,000000002,2,4,1

@@ -45,6 +45,7 @@ vector<User*> User::GetAllUsers(){
             user->_meusLivros = livrosSalvos;
             usuariosSalvos.push_back(user);
           }
+          livrosSalvos.clear();
           value.clear();
         }
         arq.close();

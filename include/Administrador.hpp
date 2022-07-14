@@ -27,6 +27,7 @@ class Administrador: public User{
         bool removerUsuario(string matricula, vector<User *> list);
         virtual string GetDados() override;
         void Updatebkp();
+        void Updatesrc();
 };
 
 #endif
