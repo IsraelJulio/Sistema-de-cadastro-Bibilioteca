@@ -61,7 +61,23 @@ bool Administrador::removerUsuario(string matricula, vector<User *> list)
     return true;
 }
 
-bool Administrador::SetLivro(int id, string nome, EGenero genero){return true;}
+bool Administrador::SetLivro(string nome, EGenero genero)
+{
+    auto livros = Livro::CarregarLivrosSalvos();
+    int id = livros.back()->GetId();
+    Livro* novo = new Livro(id+1,nome,genero,true);
+    livros.push_back(novo);
+    ofstream livro_txt("Livros.txt");
+    if(livro_txt.is_open())
+    {
+        for(auto livro : livros)
+        {
+            livro_txt << livro->GetId()<< "," << livro->GetName() << "," << static_cast<int>(livro->GetGenre()) << "," << livro->GetStats() << endl;            
+        }
+    }else return false;
+    livro_txt.close();
+    return true;
+}
 
 bool Administrador::SetLivroByUsuario(int id, string matricula)
 {

@@ -18,7 +18,7 @@ class Administrador: public User{
         vector<Livro*>ListarLivrosBloqueados(vector<Livro*> livros);
         vector<User*>ListarUsuariosAtivos(vector<User*> usuarios);
         bool SetUsuario(User* Usuario);
-        bool SetLivro(int id, string nome, EGenero genero);
+        bool SetLivro(string nome, EGenero genero);
         bool EditarUsuario(string matricula);
         bool AtualizarListaDeUsuarios(vector<User *> list);
         bool SetLivroByUsuario(int id, string matricula);

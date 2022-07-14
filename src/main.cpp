@@ -20,8 +20,8 @@ int main() {
 
 
    
-    admin.Devolucao("000000002",4);
-     
+    admin.SetLivro("Habitos",EGenero::QUIMICA);
+    admin.SetLivroByUsuario(7,"000000002");
 
 usersSalvos = User::GetAllUsers();
 

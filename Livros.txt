@@ -1,6 +1,7 @@
-1,Fundamentos de Cálculo,0,A,
-2,Gaal,1,A,
-3,A mão esquerda de Deus,4,A,
-4,Fundamentos da Quimica,2,A,
-5,Dom Casmurro,6,A,
-6,Habitos Atomicos,3,A,
+1,Fundamentos de Cálculo,0,1
+2,Gaal,1,1
+3,A mão esquerda de Deus,4,1
+4,Fundamentos da Quimica,2,1
+5,Dom Casmurro,6,1
+6,Habitos Atomicos,3,1
+7,Habitos,2,1
