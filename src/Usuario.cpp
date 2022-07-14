@@ -23,7 +23,7 @@ string Usuario::GetDados(){
 }
 
 string Usuario::GetMyBooks(){
-    string result = "";
+    string result = "";    
     ifstream arq("Usuarios_bkp.txt");
     vector<Livro*> livrosSalvos;
     string conteudo = "";

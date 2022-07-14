@@ -2,7 +2,7 @@
 #include"../include/Operacoes.hpp"
 #include <iostream>
 #include <fstream>
-
+#include <typeinfo>
 
 Administrador::Administrador(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
 
@@ -65,62 +65,73 @@ bool Administrador::SetLivro(int id, string nome, EGenero genero){return true;}
 
 bool Administrador::SetLivroByUsuario(int id, string matricula)
 {
-    vector<User*> usuariosSalvos;
+    vector<User*> usuariosSalvos = User::GetAllUsers();
     vector<Livro*> livrosSalvos;
-    ifstream arq("Usuarios_bkp.txt");
+    ifstream arq("Usuarios.txt");
     string conteudo = "";
     vector<string> value;
-    vector<string> livros;
+    string livros ="";
     bool eq = false;
+    // std::ofstream ofs("test.txt", std::ofstream::trunc);
+    ofstream beckup ("Usuarios_bkp.txt", std::ofstream::trunc);
+    string _id = to_string(id);
 
     if(!validarMatricula(matricula))
         return false; // todo exceção;
     if(!validarLivro(id))
         return false; // todo exceção;
-    auto _id = Livro::GetById(id);
     
      if (arq.is_open())
     {
-        while (getline(arq, conteudo)){
-            Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));
-cout<< endl << "é isso: (";
-cout << value[2];
-cout << ")"<< endl << endl;
-          if (stoi(value[2]) != 2)
-          {
-            Administrador* admin = new Administrador(value[0],value[1],static_cast<EPerfil>(stoi(value[2])));
-            usuariosSalvos.push_back(admin);
-          } else {
-            if (value[1] == matricula)
+        if (beckup.is_open())
+         {
+            while (getline(arq, conteudo)){
+                Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));
+            if (stoi(value[2]) != 2)
+                beckup << value[0] <<"," << value[1] <<"," << value[2]<<endl;
+            else 
             {
-                for (long unsigned int o = 3; o < value.size(); o++)
-                {        
-                    if(stoi(value[o]) == id)            
-                        eq = true; 
-                    
-                    auto lv = Livro::GetById(stoi(value[o]));
-                Livro* livro = new Livro(lv->GetId(),lv->GetName(), lv->GetGenre(),lv->GetStats());                        
-                livrosSalvos.push_back(livro); 
-                }
-                if(!eq)
-                    livrosSalvos.push_back(_id);                    
-            }    
+                if (value[1] == matricula)
+                {
+                         
+                    for (long unsigned int o = 3; o < value.size(); o++)
+                    {
+                        if(stoi(value[o]) == id) {
 
-            for (long unsigned int o = 3; o < value.size(); o++)
-            {
-                auto lv = Livro::GetById(stoi(value[o]));
-                Livro* livro = new Livro(lv->GetId(),lv->GetName(), lv->GetGenre(),lv->GetStats());                        
-                livrosSalvos.push_back(livro);                
+                            eq = true; 
+                        }           
+                    livros += "," + value[o]; 
+                    }
+                    if(!eq){
+                        // livros += "," +_id;                          
+                        livros += ",856";                          
+                    }
+                }else
+                    {
+
+                        for (long unsigned int o = 3; o < value.size(); o++)
+                        {
+                            livros += "," + value[o]; 
+             
+                        }
+                        
+                    }
+                beckup << value[0] <<"," << value[1] <<"," << value[2]<< livros;
+                livros = "";
+
             }
-            Usuario* user = new Usuario(value[0],value[1],static_cast<EPerfil>(stoi(value[2])));
-            user->_meusLivros = livrosSalvos;
-            usuariosSalvos.push_back(user);
-          }
           value.clear();
+            }
         }
-        arq.close();
-        AtualizarListaDeUsuarios(usuariosSalvos);
+        beckup.close();
     }
+        arq.close();
+
+
+
+        // AtualizarListaDeUsuarios(usuariosSalvos);
+    
+
     return true;
 }
 
