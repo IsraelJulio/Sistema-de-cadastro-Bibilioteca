@@ -5,6 +5,7 @@
 #include <iterator>
 
 Usuario::Usuario(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
+Usuario::Usuario(string nome, string matricula, EPerfil perfil,bool stats): User(nome,matricula,perfil,stats){}
 Usuario::Usuario(string nome, string matricula, EPerfil perfil,vector<Livro*> livros): User(nome,matricula,perfil){
     _meusLivros = livros;
 }
@@ -19,7 +20,7 @@ void Usuario::Imprime(){
 }
 
 string Usuario::GetDados(){
-    return this->_nome + "," + this->_matricula + ",2" + GetMyBooks();    
+    return this->_nome + "," + this->_matricula + ",2," + this->GetStatusUser() + GetMyBooks();    
 }
 
 string Usuario::GetMyBooks(){
@@ -36,7 +37,7 @@ string Usuario::GetMyBooks(){
             
             if (value[1] == this->_matricula)
             {
-                for (long unsigned int o = 3; o < value.size(); o++)
+                for (long unsigned int o = 4; o < value.size(); o++)
                 {                    
                     result +=  "," + value[o];                                                  
                 }

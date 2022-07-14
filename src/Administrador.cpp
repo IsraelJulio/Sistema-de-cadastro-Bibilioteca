@@ -5,6 +5,7 @@
 #include <typeinfo>
 
 Administrador::Administrador(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
+Administrador::Administrador(string nome, string matricula, EPerfil perfil,bool stats): User(nome,matricula,perfil,stats){}
 
 void Administrador::Imprime(){
     cout << _nome << " : " << _matricula << "." << endl;
@@ -29,7 +30,7 @@ vector<Livro*> Administrador::ListarLivrosBloqueados(vector<Livro*> livrosSalvos
 vector<User*> Administrador::ListarUsuariosAtivos(vector<User*> usuarios){
 
     for(std::vector<User*>::iterator it = usuarios.begin(); it != usuarios.end(); it++){
-        if((*it)->GetStatusUser() == true){
+        if((*it)->GetStatusUser() == "1"){
          for(std::vector<User*>::iterator it2 = _usuariosAtivos.begin(); it2 != _usuariosAtivos.end(); it2++){
                 if((*it2)!=(*it)){                            //verifica se o usuário já está na lista de usuarios ativos
                 _usuariosAtivos.push_back(*it);
@@ -104,12 +105,12 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
             while (getline(arq, conteudo)){
                 Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));
             if (stoi(value[2]) != 2)
-                beckup << value[0] <<"," << value[1] <<"," << value[2]<<endl;
+                beckup << value[0] <<"," << value[1] <<"," << value[2]<<"," << value[3]<<endl;
             else 
             {
                 if (value[1] == matricula)
                 {                        
-                    for (long unsigned int o = 3; o < value.size(); o++)
+                    for (long unsigned int o = 4; o < value.size(); o++)
                     {
                         if(stoi(value[o]) == id) {
 
@@ -123,14 +124,14 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
                 }else
                     {
 
-                        for (long unsigned int o = 3; o < value.size(); o++)
+                        for (long unsigned int o = 4; o < value.size(); o++)
                         {
                             livros += "," + value[o]; 
              
                         }
                         
                     }
-                beckup << value[0] <<"," << value[1] <<",2" <<  livros << endl;
+                beckup << value[0] <<"," << value[1] <<",2," << value[3]<<  livros << endl;
                 livros = "";
 
             }
@@ -186,7 +187,7 @@ ofstream myfile ("Usuarios.txt");
 }
 
 string Administrador::GetDados(){
-    return this->_nome + "," + this->_matricula + ",1";    
+    return this->_nome + "," + this->_matricula + ",1,"+ this->GetStatusUser();    
 }
 
 void Administrador::Updatebkp()
@@ -228,12 +229,12 @@ bool Administrador::Devolucao(string matricula, int id)
             while (getline(arq, conteudo)){
                 Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));
             if (stoi(value[2]) != 2)
-                beckup << value[0] <<"," << value[1] <<"," << value[2]<<endl;
+                beckup << value[0] <<"," << value[1] <<"," << value[2]<<"," << value[3]<<endl;
             else 
             {
                 if (value[1] == matricula)
                 {                        
-                    for (long unsigned int o = 3; o < value.size(); o++)
+                    for (long unsigned int o = 4; o < value.size(); o++)
                     {
                         if(stoi(value[o]) == id)
                             eq = true; 
@@ -246,14 +247,14 @@ bool Administrador::Devolucao(string matricula, int id)
                 }else
                     {
 
-                        for (long unsigned int o = 3; o < value.size(); o++)
+                        for (long unsigned int o = 4; o < value.size(); o++)
                         {
                             livros += "," + value[o]; 
              
                         }
                         
                     }
-                beckup << value[0] <<"," << value[1] <<",2" <<  livros << endl;
+                beckup << value[0] <<"," << value[1] <<",2," << value[3] <<  livros << endl;
                 livros = "";
 
             }

@@ -29,19 +29,20 @@ vector<User*> User::GetAllUsers(){
     if (arq.is_open())
     {
         while (getline(arq, conteudo)){
-          Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));    
-          if (value.size() < 4)
+          Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));   
+          cout << value.size(); 
+          if (value.size() < 5)
           {
-            Administrador* admin = new Administrador(value[0],value[1],static_cast<EPerfil>(stoi(value[2])));
+            Administrador* admin = new Administrador(value[0],value[1],static_cast<EPerfil>(1),value[3]=="1");
             usuariosSalvos.push_back(admin);
           } else {
-            for (long unsigned int o = 3; o < value.size(); o++)
+            for (long unsigned int o = 4; o < value.size(); o++)
             {
                 auto lv = Livro::GetById(stoi(value[o]));
                 Livro* livro = new Livro(lv->GetId(),lv->GetName(), lv->GetGenre(),lv->GetStats());                        
                 livrosSalvos.push_back(livro);                
             }
-            Usuario* user = new Usuario(value[0],value[1],static_cast<EPerfil>(stoi(value[2])));
+            Usuario* user = new Usuario(value[0],value[1],static_cast<EPerfil>(2),value[3]=="1");
             user->_meusLivros = livrosSalvos;
             usuariosSalvos.push_back(user);
           }
@@ -53,8 +54,8 @@ vector<User*> User::GetAllUsers(){
     return usuariosSalvos;
 }
 
-bool User::GetStatusUser(){
-    return _active;
+string User::GetStatusUser(){
+    return _active == true? "1" : "0";
 }
 
 string User::GetMatricula(){

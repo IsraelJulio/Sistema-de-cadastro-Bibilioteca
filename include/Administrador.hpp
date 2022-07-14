@@ -14,6 +14,7 @@ class Administrador: public User{
 
     public:
         Administrador(string nome, string matricula, EPerfil perfil);
+        Administrador(string nome, string matricula, EPerfil perfil, bool stats);
         virtual void Imprime() override;
         vector<Livro*>ListarLivrosBloqueados(vector<Livro*> livros);
         vector<User*>ListarUsuariosAtivos(vector<User*> usuarios);
@@ -29,6 +30,7 @@ class Administrador: public User{
         void Updatebkp();
         void Updatesrc();
         bool Devolucao(string matricula, int id);
+        bool SetBloqueio(string matricula);
 };
 
 #endif

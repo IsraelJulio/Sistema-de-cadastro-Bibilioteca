@@ -21,7 +21,7 @@ EGenero Livro::GetGenre(){
     return _genero;
 }
 bool Livro::GetStats(){
-    return _active;
+    return _active == true? "1" : "0";
 }
 vector<Livro*> Livro::CarregarLivrosSalvos(){
     vector<Livro*> livrosSalvos;

@@ -16,12 +16,12 @@ int main() {
     cout << endl << endl;
     Administrador admin = Administrador("novo admin","0000001",EPerfil::ADMIN);     
     
-    // Usuario novo = Usuario("novo usuario comum 2", "000000002", EPerfil::USER);
+    Usuario novo = Usuario("Hulk", "46", EPerfil::USER);
 
 
-   
-    admin.SetLivro("Habitos",EGenero::QUIMICA);
-    admin.SetLivroByUsuario(7,"000000002");
+   admin.SetUsuario(&novo);
+    admin.SetLivro("Hobt",EGenero::AVENTURA);
+    admin.SetLivroByUsuario(8,"46");
 
 usersSalvos = User::GetAllUsers();
 

@@ -22,7 +22,7 @@ class User{
         static vector<User*> GetAllUsers();
         virtual void Imprime() = 0;
         virtual string GetDados() = 0;
-        bool GetStatusUser();
+        string GetStatusUser();
         string GetMatricula();
         
 };
