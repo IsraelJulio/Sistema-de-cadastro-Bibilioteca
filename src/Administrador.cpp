@@ -5,7 +5,7 @@
 #include <typeinfo>
 
 Administrador::Administrador(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
-Administrador::Administrador(string nome, string matricula, EPerfil perfil,bool stats): User(nome,matricula,perfil,stats){}
+Administrador::Administrador(string nome, string matricula, EPerfil perfil,bool active): User(nome,matricula,perfil,active){}
 
 void Administrador::Imprime(){
     cout << _nome << " : " << _matricula << "." << endl;

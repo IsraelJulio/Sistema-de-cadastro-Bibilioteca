@@ -33,7 +33,7 @@ vector<Livro*> Livro::CarregarLivrosSalvos(){
     {
         while (getline(arq, conteudo)){            
             Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));     
-            Livro* livro = new Livro(stoi(value[0]),value[1], static_cast<EGenero>(stoi(value[2])),value[3] == "1");
+            Livro* livro = new Livro(stoi(value[0]),value[1], static_cast<EGenero>(stoi(value[2])),stoi(value[3])==1);
             livrosSalvos.push_back(livro);
             value.clear();
         }

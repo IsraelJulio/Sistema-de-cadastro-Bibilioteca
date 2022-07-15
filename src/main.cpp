@@ -18,18 +18,18 @@ int main() {
     
 //     Usuario novo = Usuario("Hulk", "46", EPerfil::USER);
 
-    admin.SetBloqueio("46");
+    // admin.SetBloqueio("46");
 //    admin.SetUsuario(&novo);
 //     admin.SetLivro("Hobt",EGenero::AVENTURA);
 //     admin.SetLivroByUsuario(8,"46");
 
-// auto usersSalvos = User::GetAllUsers();
+auto usersSalvos = User::GetBlockUsers();
 
-//     for(auto u : usersSalvos)
-//     {
-//         u->Imprime();
-//     }
-//     cout << endl << endl;
+    for(auto u : usersSalvos)
+    {
+        u->Imprime();
+    }
+    cout << endl << endl;
 
 
 

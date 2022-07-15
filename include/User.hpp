@@ -20,10 +20,12 @@ class User{
         User(string nome, string matricula, EPerfil perfil, bool active);
         User(string nome, string matricula, EPerfil perfil);
         static vector<User*> GetAllUsers();
+        static vector<User*> GetBlockUsers();
         virtual void Imprime() = 0;
         virtual string GetDados() = 0;
         string GetStatusUser();
         string GetMatricula();
+
         
 };
 
