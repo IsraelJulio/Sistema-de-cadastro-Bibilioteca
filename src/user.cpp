@@ -30,7 +30,6 @@ vector<User*> User::GetAllUsers(){
     {
         while (getline(arq, conteudo)){
           Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));   
-          cout << value.size(); 
           if (value.size() < 5)
           {
             Administrador* admin = new Administrador(value[0],value[1],static_cast<EPerfil>(1),value[3]=="1");

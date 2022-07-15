@@ -213,7 +213,7 @@ bool Administrador::Devolucao(string matricula, int id)
     vector<string> value;
     string livros ="";
     bool eq = false;
-    // std::ofstream ofs("test.txt", std::ofstream::trunc);
+
     ofstream beckup ("Usuarios_bkp.txt", std::ofstream::trunc);
     string _id = to_string(id);
 
@@ -258,6 +258,64 @@ bool Administrador::Devolucao(string matricula, int id)
                 livros = "";
 
             }
+          value.clear();
+            }
+        }
+        beckup.close();
+    }
+    arq.close();
+    Updatesrc();  
+    return true;
+}
+
+bool Administrador::SetBloqueio(string matricula)
+{
+    vector<User*> usuariosSalvos = User::GetAllUsers();
+    vector<Livro*> livrosSalvos;
+    ifstream arq("Usuarios.txt");
+    string conteudo = "";
+    vector<string> value;
+    string livros ="";
+    ofstream beckup ("Usuarios_bkp.txt", std::ofstream::trunc);
+
+    if(!validarMatricula(matricula))
+        return false; // todo exceção;
+
+     if (arq.is_open())
+    {
+        if (beckup.is_open())
+         {
+            while (getline(arq, conteudo)){
+                Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));
+
+            if ((stoi(value[2]) != 2) && value[1] != matricula)
+                beckup << value[0] <<"," << value[1] <<"," << value[2]<<"," << value[3]<<endl;
+            else if((stoi(value[2]) != 2))
+                beckup << value[0] <<"," << value[1] <<"," << value[2]<<"," << value[3]<<endl;
+                else if((stoi(value[2]) != 2) && value[1] == matricula)
+                  beckup << value[0] <<"," << value[1] <<"," << value[2]<<",0"<<endl;  
+                else{
+                    if (value[1] == matricula)
+                    {                        
+                        for (long unsigned int o = 4; o < value.size(); o++)
+                        {                                
+                            livros += "," + value[o]; 
+                        }
+                        value[3] = "0";
+                    }else
+                        {
+
+                            for (long unsigned int o = 4; o < value.size(); o++)
+                            {
+                                livros += "," + value[o]; 
+                
+                            }
+                            
+                        }
+                    beckup << value[0] <<"," << value[1] <<",2," << value[3] <<  livros << endl;
+                    livros = "";
+
+                }
           value.clear();
             }
         }
