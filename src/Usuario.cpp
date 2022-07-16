@@ -3,6 +3,7 @@
 #include <iostream>
 #include<fstream>
 #include <iterator>
+#include <algorithm>
 
 Usuario::Usuario(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
 Usuario::Usuario(string nome, string matricula, EPerfil perfil,bool stats): User(nome,matricula,perfil,stats){}
@@ -52,10 +53,13 @@ string Usuario::GetMyBooks(){
 User* Usuario::GetUserByMatricula(string matricula)
 {
     auto usuariosAtivos = User::GetAllUsers();
+
     for(auto user : usuariosAtivos)
     {
-        if(user->GetMatricula() == matricula)
+        if(user->GetMatricula() == matricula && user->GetPerfil() == 1){            
             return user;
+        }
+            
     }
     return nullptr;    
 }

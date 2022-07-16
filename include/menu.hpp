@@ -10,7 +10,7 @@ class menu
 private:
 public:
     
-    bool GetUsuario();
+    bool GetUsuario(string matricula);
     void Titulo();
     void LimparTela();
     void SaltarLinhas(int num);

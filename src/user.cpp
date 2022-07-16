@@ -71,4 +71,11 @@ string User::GetStatusUser(){
 string User::GetMatricula(){
   return _matricula;
 }
-
+string User::GetNome()
+{
+    return _nome;
+}
+int User::GetPerfil()
+{
+  return _perfil == EPerfil::ADMIN ? 0 : 1;
+}

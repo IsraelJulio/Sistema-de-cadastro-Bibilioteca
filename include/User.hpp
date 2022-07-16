@@ -25,7 +25,8 @@ class User{
         virtual string GetDados() = 0;
         string GetStatusUser();
         string GetMatricula();
-
+        string GetNome();
+        int GetPerfil();
         
 };
 

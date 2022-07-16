@@ -18,8 +18,8 @@ class Usuario : public User{
     vector<Livro> ListarReservados();
     string GetMyBooks();
     virtual void Imprime() override;
-    virtual string GetDados() override;
-    User* GetUserByMatricula(string matricula);
+    virtual string GetDados() override;    
+    static User* GetUserByMatricula(string matricula);
 
 };
 
