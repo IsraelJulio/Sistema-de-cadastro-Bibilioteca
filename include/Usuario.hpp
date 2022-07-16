@@ -19,6 +19,7 @@ class Usuario : public User{
     string GetMyBooks();
     virtual void Imprime() override;
     virtual string GetDados() override;
+    User* GetUserByMatricula(string matricula);
 
 };
 

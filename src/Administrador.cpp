@@ -148,8 +148,8 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
 
 bool Administrador::validarMatricula(string matricula)
 {
-    _usuariosAtivos = User::GetAllUsers();
-     for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){ // validar matricula
+    auto usuariosAtivos = User::GetAllUsers();
+     for(std::vector<User*>::iterator it = usuariosAtivos.begin(); it != usuariosAtivos.end(); it++){ // validar matricula
         if((*it)->GetMatricula() == matricula) return true;
     }
     return false;

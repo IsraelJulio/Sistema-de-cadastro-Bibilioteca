@@ -17,7 +17,7 @@ public:
     bool TelaPrincipal();
     bool Run();
     bool Admin();
-    bool UsuarioComun();
+    bool UsuarioComum(bool force=false);
     bool Navegacao(string input);
 
 };

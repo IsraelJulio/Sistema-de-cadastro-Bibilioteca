@@ -48,3 +48,14 @@ string Usuario::GetMyBooks(){
     }
     return result;
 }
+
+User* Usuario::GetUserByMatricula(string matricula)
+{
+    auto usuariosAtivos = User::GetAllUsers();
+    for(auto user : usuariosAtivos)
+    {
+        if(user->GetMatricula() == matricula)
+            return user;
+    }
+    return nullptr;    
+}
