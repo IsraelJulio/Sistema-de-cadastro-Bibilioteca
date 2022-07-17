@@ -263,6 +263,29 @@ bool menu::TelaPrincipal()
 
             }
 
+            if(resposta == "6")
+            {
+                Opcoes::OpcaoSelecionada("Desbloquear Usuario!");
+                Opcoes::InformeMatricula();
+
+                while(skip != true)
+                {
+                    cin >> matricula;
+                    if(matricula == "9")
+                    return false;
+                    LimparTela();            
+                    if(Administrador::validarMatricula(matricula,1))                
+                        skip = true;
+                    else
+                        Opcoes::OpcaoInvalida();   
+                }
+                skip = false;
+
+                if(_adm->SetBloqueio(matricula,"1"))
+                    Opcoes::CadastroSucesso();
+                else
+                    Opcoes::CadastroFalha();
+            }
              voltarOpAdm = Opcoes::VoltarUsuario();
 
                 if(voltarOpAdm)
