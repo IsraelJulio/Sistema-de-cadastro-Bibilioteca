@@ -21,8 +21,8 @@ int main() {
             
             if(!m->GetTelaPrincipal())
                 m->TelaPrincipal();
-
-            run = Opcoes::OpcoesEncerrar();
+            if(m->GetTelaPrincipal())
+                run = Opcoes::OpcoesEncerrar();
             m->LimparTela();
         }
     }

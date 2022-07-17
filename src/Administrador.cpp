@@ -93,7 +93,7 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
     ofstream beckup ("Usuarios_bkp.txt", std::ofstream::trunc);
     string _id = to_string(id);
 
-    if(!validarMatricula(matricula))
+    if(!validarMatricula(matricula,1))
         return false; // todo exceção;
     if(!validarLivro(id))
         return false; // todo exceção;
@@ -146,11 +146,11 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
     return true;
 }
 
-bool Administrador::validarMatricula(string matricula)
+bool Administrador::validarMatricula(string matricula, int perfil)
 {
     auto usuariosAtivos = User::GetAllUsers();
      for(std::vector<User*>::iterator it = usuariosAtivos.begin(); it != usuariosAtivos.end(); it++){ // validar matricula
-        if((*it)->GetMatricula() == matricula && (*it)->GetPerfil() == 1)  return  true;
+        if((*it)->GetMatricula() == matricula && (*it)->GetPerfil() == perfil)  return  true;
     }
     return false;
 }
@@ -217,7 +217,7 @@ bool Administrador::Devolucao(string matricula, int id)
     ofstream beckup ("Usuarios_bkp.txt", std::ofstream::trunc);
     string _id = to_string(id);
 
-    if(!validarMatricula(matricula))
+    if(!validarMatricula(matricula,1))
         return false; // todo exceção;
     if(!validarLivro(id))
         return false; // todo exceção;
@@ -278,7 +278,7 @@ bool Administrador::SetBloqueio(string matricula)
     string livros ="";
     ofstream beckup ("Usuarios_bkp.txt", std::ofstream::trunc);
 
-    if(!validarMatricula(matricula))
+    if(!validarMatricula(matricula,1))
         return false; // todo exceção;
 
      if (arq.is_open())

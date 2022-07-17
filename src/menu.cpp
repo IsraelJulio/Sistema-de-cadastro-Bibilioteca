@@ -78,7 +78,7 @@ bool menu::TelaPrincipal()
             if(matricula == "9")
             return false;
             LimparTela();            
-            if(Administrador::validarMatricula(matricula))                
+            if(Administrador::validarMatricula(matricula,1))                
                 skip = true;
             else
                 cout << "************* matricula invalida *********************" << endl;    
