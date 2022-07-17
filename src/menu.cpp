@@ -50,10 +50,12 @@ bool menu::TelaPrincipal()
     string matricula = "";
     std::vector<string> principal = { "0", "1", "9" };
     std::vector<string> comum = { "0", "1", "9" };
+    std::vector<string> opAdm = { "0", "1", "2" , "3", "4", "5", "6", "9" };
     this->SetTelaPrincipal(true);
 
     bool skip = false;
     bool voltarOpUsuario = false;
+    bool voltarOpAdm = false;
 
     Opcoes::OpcoesLogin();
 
@@ -95,14 +97,14 @@ bool menu::TelaPrincipal()
                 Opcoes::OpcoesUsuario(u->GetNome());
                 cin >> resposta;
 
+                LimparTela();
                 if(resposta == "9")
                 return false;
 
                 if(std::find(comum.begin(), comum.end(), resposta) != comum.end())
                     skip = true;
-
-                LimparTela();
-                cout << "************* opcao invalida *********************" << endl;
+                else
+                    cout << "************* opcao invalida *********************" << endl;
 
             }
             skip = false;
@@ -142,7 +144,90 @@ bool menu::TelaPrincipal()
 
         
     else
-        Admin();
+    {
+        while(skip != true)
+        {
+            Opcoes::OPcoesMatricula();
+            cin >> matricula;
+            if(matricula == "9")
+            return false;
+            LimparTela();            
+            if(Administrador::validarMatricula(matricula,0))                
+                skip = true;
+            else
+                cout << "************* matricula invalida *********************" << endl;    
+        }
+        skip = false;
+        auto u = Usuario::GetUserByMatricula(matricula);
+        Administrador* _adm = new Administrador(u->GetNome(),u->GetMatricula(),EPerfil::ADMIN); 
+
+        while(!voltarOpAdm)
+        {
+            while(skip != true)
+            {
+                Opcoes::OpcoesAdm(u->GetNome());
+                cin >> resposta;
+
+                LimparTela();
+                if(resposta == "9")
+                return false;
+
+                if(std::find(opAdm.begin(), opAdm.end(), resposta) != opAdm.end())
+                    skip = true;
+                else
+                    cout << "************* opcao invalida *********************" << endl;
+            }
+            skip = false;
+            if(resposta == "0")
+            {
+                string nome = "";
+                while(skip != true)
+                {
+                    Opcoes::OpcaoSelecionada("Cadastrar Livro!"); 
+                    Opcoes::OpcaoLivroNome();
+                    cin.ignore();
+                    std::getline (std::cin,nome);
+           
+                    // cin >> nome;
+                    Opcoes::OpcaoLivroGenero();
+                    cin >> resposta;
+
+                    LimparTela();
+                    if(resposta == "9")
+                    return false;
+
+                    if(std::find(opAdm.begin(), opAdm.end(), resposta) != opAdm.end())
+                        skip = true;
+                    else
+                        cout << "************* opcao invalida *********************" << endl;
+                }
+                skip = false;
+
+                if(_adm->SetLivro(nome,static_cast<EGenero>(stoi(resposta))))
+                    Opcoes::CadastroSucesso();
+                else
+                    Opcoes::CadastroFalha();
+                
+                voltarOpAdm = Opcoes::VoltarUsuario();
+
+                if(voltarOpAdm)
+                    return false;
+                LimparTela();
+            } 
+            if(resposta=="1")
+            {
+                Opcoes::OpcaoSelecionada("Carregar Livros Salvos");
+                vector<Livro*> livros = Livro::CarregarLivrosSalvos();                   
+
+                for(auto livro : livros)
+                {
+                        livro->Imprime();
+                }
+            }
+
+        }
+    }
+        
 
     return true;
 }
@@ -154,11 +239,6 @@ bool menu::Run(){
         
     return true;
 }
-
-bool menu::Admin(){
-    return true;
-}
-
 bool menu::GetTelaPrincipal()
 {
     return _telaprincipal;

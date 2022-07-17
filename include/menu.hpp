@@ -19,7 +19,6 @@ public:
     void SaltarLinhas(int num);
     bool TelaPrincipal();
     bool Run();
-    bool Admin();
     bool UsuarioComum(bool force=false);
     bool Navegacao(string input);
     

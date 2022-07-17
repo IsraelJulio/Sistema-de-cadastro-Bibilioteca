@@ -76,6 +76,10 @@ string Livro::GetEnum(EGenero EnumId){
         case EGenero::ROMANCE:
             result =  "Romance";
             break;
+    
+        case EGenero::OUTROS:
+            result =  "Outros";
+            break;
 
         default:
             break;

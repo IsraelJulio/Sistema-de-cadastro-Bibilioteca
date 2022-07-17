@@ -12,7 +12,8 @@ enum class EGenero{
     FISICA = 3,
     FANTASIA = 4,
     AVENTURA = 5,
-    ROMANCE = 6
+    ROMANCE = 6,
+    OUTROS = 7
 };
 
 #endif

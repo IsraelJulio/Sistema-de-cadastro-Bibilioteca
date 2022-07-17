@@ -56,7 +56,7 @@ User* Usuario::GetUserByMatricula(string matricula)
 
     for(auto user : usuariosAtivos)
     {
-        if(user->GetMatricula() == matricula && user->GetPerfil() == 1){            
+        if(user->GetMatricula() == matricula){            
             return user;
         }
             
