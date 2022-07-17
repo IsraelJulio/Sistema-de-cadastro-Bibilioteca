@@ -188,7 +188,6 @@ bool menu::TelaPrincipal()
                     cin.ignore();
                     std::getline (std::cin,nome);
            
-                    // cin >> nome;
                     Opcoes::OpcaoLivroGenero();
                     cin >> resposta;
 
@@ -208,13 +207,9 @@ bool menu::TelaPrincipal()
                 else
                     Opcoes::CadastroFalha();
                 
-                voltarOpAdm = Opcoes::VoltarUsuario();
-
-                if(voltarOpAdm)
-                    return false;
-                LimparTela();
+                
             } 
-            if(resposta=="1")
+            if(resposta== "1")
             {
                 Opcoes::OpcaoSelecionada("Carregar Livros Salvos");
                 vector<Livro*> livros = Livro::CarregarLivrosSalvos();                   
@@ -223,8 +218,29 @@ bool menu::TelaPrincipal()
                 {
                         livro->Imprime();
                 }
-            }
+                
+                voltarOpAdm = Opcoes::VoltarUsuario();
 
+                if(voltarOpAdm)
+                    return false;
+                LimparTela();
+            }
+            if(resposta == "2")
+            {
+                Opcoes::OpcaoSelecionada("Visualizar Todos os Usuarios!");
+                auto allUsers = User::GetAllUsers(); 
+
+                for(auto user : allUsers)
+                {
+                    user->Imprime();
+                }
+
+            voltarOpAdm = Opcoes::VoltarUsuario();
+
+                if(voltarOpAdm)
+                    return false;
+                LimparTela();
+            }
         }
     }
         

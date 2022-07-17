@@ -8,7 +8,7 @@ Administrador::Administrador(string nome, string matricula, EPerfil perfil): Use
 Administrador::Administrador(string nome, string matricula, EPerfil perfil,bool active): User(nome,matricula,perfil,active){}
 
 void Administrador::Imprime(){
-    cout << _nome << " : " << _matricula << "." << endl;
+    cout <<endl <<  "Perfil: ADMINISTRADOR \nNome: " << _nome << "\nMATRICULA: " << _matricula  << endl;
     return;
 }
 

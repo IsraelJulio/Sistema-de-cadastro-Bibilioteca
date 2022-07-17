@@ -121,9 +121,12 @@ bool Opcoes::VoltarUsuario()
 
 void Opcoes::OpcaoSelecionada(string opcao)
 {
-    cout << "*********************************" << endl;
+    SaltarLinhas(5);
+    LimparTela();
+    cout << "******************************************************" << endl;
     cout << "opcao Selecionada: "<< opcao <<endl;
-    cout << "*********************************" << endl;
+    cout << "******************************************************" << endl;
+    SaltarLinhas(2);
     return;
 }
 
@@ -141,7 +144,9 @@ void Opcoes::OpcaoLivroGenero()
     cout << "[3] - Física" << endl;
     cout << "[4] - Fantasia" << endl;
     cout << "[5] - Aventura" << endl;
-    cout << "[6] - Romance" << endl;   
+    cout << "[6] - Romance" << endl;
+    SaltarLinhas(3);   
+    cout << "[9] - Para Cancelar e Voltar ao menu principal" << endl;   
 
 }
 
