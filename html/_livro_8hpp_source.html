@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacao_Doxygen: Código-Fonte de include/Livro.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="istockphoto-1271339527-612x612.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentacao_Doxygen<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">PDS2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Livro.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_livro_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef Livro_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define Livro_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&lt;iostream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include&lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include&lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_e_genero_8hpp.html">EGenero.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_livro.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_livro.html">Livro</a>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordtype">int</span> _id;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordtype">string</span> _nome;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_enumeration" href="_e_genero_8hpp.html#aff8860c1aa8ab550fcd18d704c59b265">EGenero</a> _genero;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">bool</span> _active;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_function" href="class_livro.html#ad98b7c2dc726cc6572a39fb72fb00b92">Livro</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">string</span> nome, <a class="code hl_enumeration" href="_e_genero_8hpp.html#aff8860c1aa8ab550fcd18d704c59b265">EGenero</a> genero, <span class="keywordtype">bool</span> active);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">static</span> vector&lt;Livro*&gt; <a class="code hl_function" href="class_livro.html#a93e9e5137fa1aa15ff20dedb737def18">CarregarLivrosSalvos</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_livro.html#a50f2458c256dadbee74cc5f7f8787cbb">Imprime</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">string</span> <a class="code hl_function" href="class_livro.html#a22d709ac6e5cdfe58ced9214c99f96e8">GetEnum</a>(<a class="code hl_enumeration" href="_e_genero_8hpp.html#aff8860c1aa8ab550fcd18d704c59b265">EGenero</a> EnumId);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_livro.html">Livro</a>* <a class="code hl_function" href="class_livro.html#a3c5f5b0ded7b62ded79b8b0f8f235862">GetById</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_livro.html#af06afb21e29c622c447d60be3ea826d4">GetId</a>();      </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">string</span> <a class="code hl_function" href="class_livro.html#a743ff7b138a7277f5c03127b641c9f46">GetName</a>();      </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_enumeration" href="_e_genero_8hpp.html#aff8860c1aa8ab550fcd18d704c59b265">EGenero</a> <a class="code hl_function" href="class_livro.html#a40d5a045d365601a802ec09dfebb1520">GetGenre</a>();  </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_livro.html#a75452422fc15df641330907c123039ae">GetStats</a>();    </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_e_genero_8hpp_html"><div class="ttname"><a href="_e_genero_8hpp.html">EGenero.hpp</a></div></div>
+<div class="ttc" id="a_e_genero_8hpp_html_aff8860c1aa8ab550fcd18d704c59b265"><div class="ttname"><a href="_e_genero_8hpp.html#aff8860c1aa8ab550fcd18d704c59b265">EGenero</a></div><div class="ttdeci">EGenero</div><div class="ttdef"><b>Definition:</b> EGenero.hpp:8</div></div>
+<div class="ttc" id="aclass_livro_html"><div class="ttname"><a href="class_livro.html">Livro</a></div><div class="ttdef"><b>Definition:</b> Livro.hpp:10</div></div>
+<div class="ttc" id="aclass_livro_html_a22d709ac6e5cdfe58ced9214c99f96e8"><div class="ttname"><a href="class_livro.html#a22d709ac6e5cdfe58ced9214c99f96e8">Livro::GetEnum</a></div><div class="ttdeci">string GetEnum(EGenero EnumId)</div><div class="ttdoc">Função para retornar o nome de um determinado Enum.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:87</div></div>
+<div class="ttc" id="aclass_livro_html_a3c5f5b0ded7b62ded79b8b0f8f235862"><div class="ttname"><a href="class_livro.html#a3c5f5b0ded7b62ded79b8b0f8f235862">Livro::GetById</a></div><div class="ttdeci">static Livro * GetById(int id)</div><div class="ttdoc">Pega o livro pelo seu ID.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:134</div></div>
+<div class="ttc" id="aclass_livro_html_a40d5a045d365601a802ec09dfebb1520"><div class="ttname"><a href="class_livro.html#a40d5a045d365601a802ec09dfebb1520">Livro::GetGenre</a></div><div class="ttdeci">EGenero GetGenre()</div><div class="ttdoc">Pegar Genero.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:40</div></div>
+<div class="ttc" id="aclass_livro_html_a50f2458c256dadbee74cc5f7f8787cbb"><div class="ttname"><a href="class_livro.html#a50f2458c256dadbee74cc5f7f8787cbb">Livro::Imprime</a></div><div class="ttdeci">void Imprime()</div><div class="ttdoc">Função para imprimir os dados dos usuarios.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:78</div></div>
+<div class="ttc" id="aclass_livro_html_a743ff7b138a7277f5c03127b641c9f46"><div class="ttname"><a href="class_livro.html#a743ff7b138a7277f5c03127b641c9f46">Livro::GetName</a></div><div class="ttdeci">string GetName()</div><div class="ttdoc">Pegar Nome.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:32</div></div>
+<div class="ttc" id="aclass_livro_html_a75452422fc15df641330907c123039ae"><div class="ttname"><a href="class_livro.html#a75452422fc15df641330907c123039ae">Livro::GetStats</a></div><div class="ttdeci">bool GetStats()</div><div class="ttdoc">Pegar Status.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:49</div></div>
+<div class="ttc" id="aclass_livro_html_a93e9e5137fa1aa15ff20dedb737def18"><div class="ttname"><a href="class_livro.html#a93e9e5137fa1aa15ff20dedb737def18">Livro::CarregarLivrosSalvos</a></div><div class="ttdeci">static vector&lt; Livro * &gt; CarregarLivrosSalvos()</div><div class="ttdoc">Função para carregar todos os livros salvos.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:57</div></div>
+<div class="ttc" id="aclass_livro_html_ad98b7c2dc726cc6572a39fb72fb00b92"><div class="ttname"><a href="class_livro.html#ad98b7c2dc726cc6572a39fb72fb00b92">Livro::Livro</a></div><div class="ttdeci">Livro(int id, string nome, EGenero genero, bool active)</div><div class="ttdoc">Construct a new Livro:: Livro object.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:13</div></div>
+<div class="ttc" id="aclass_livro_html_af06afb21e29c622c447d60be3ea826d4"><div class="ttname"><a href="class_livro.html#af06afb21e29c622c447d60be3ea826d4">Livro::GetId</a></div><div class="ttdeci">int GetId()</div><div class="ttdoc">Pegar Id.</div><div class="ttdef"><b>Definition:</b> Livro.cpp:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

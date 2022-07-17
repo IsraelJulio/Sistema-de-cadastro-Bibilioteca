@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacao_Doxygen: Código-Fonte de include/Administrador.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="istockphoto-1271339527-612x612.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentacao_Doxygen<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">PDS2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Administrador.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_administrador_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef Administrador_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define Administrador_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&lt;vector&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include&quot;<a class="code" href="_user_8hpp.html">User.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include&quot;<a class="code" href="_livro_8hpp.html">Livro.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_usuario_8hpp.html">Usuario.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_administrador.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="class_administrador.html">Administrador</a>: <span class="keyword">public</span> <a class="code hl_class" href="class_user.html">User</a>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        vector&lt;User*&gt; _usuariosAtivos;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        vector&lt;Livro*&gt; _livrosBloqueados;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        vector&lt;Livro*&gt; _livrosDevolvidos;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_function" href="class_administrador.html#aa222dd75ca3a727a0a9d3bb1ea42b0e5">Administrador</a>(<span class="keywordtype">string</span> nome, <span class="keywordtype">string</span> matricula, <a class="code hl_enumeration" href="_e_perfil_8hpp.html#ac83143fe42e7015fce3096ea2b387d83">EPerfil</a> perfil);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_function" href="class_administrador.html#aa222dd75ca3a727a0a9d3bb1ea42b0e5">Administrador</a>(<span class="keywordtype">string</span> nome, <span class="keywordtype">string</span> matricula, <a class="code hl_enumeration" href="_e_perfil_8hpp.html#ac83143fe42e7015fce3096ea2b387d83">EPerfil</a> perfil, <span class="keywordtype">bool</span> stats);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_administrador.html#ac3319c407750ea9d9afe6b8bafdc322b">Imprime</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        vector&lt;Livro*&gt;<a class="code hl_function" href="class_administrador.html#afb82b505b836ad1d8fef6f813907f6dd">ListarLivrosBloqueados</a>(vector&lt;Livro*&gt; livros);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        vector&lt;User*&gt;<a class="code hl_function" href="class_administrador.html#a5262aeed85e64c478948be443fce8366">ListarUsuariosAtivos</a>(vector&lt;User*&gt; usuarios);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#a4a3eecc3e9313702db41fb1538b2dcbd">SetUsuario</a>(<a class="code hl_class" href="class_user.html">User</a>* <a class="code hl_class" href="class_usuario.html">Usuario</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#ab2dfd8064593b9fffaf35aa7d28ab664">SetLivro</a>(<span class="keywordtype">string</span> nome, <a class="code hl_enumeration" href="_e_genero_8hpp.html#aff8860c1aa8ab550fcd18d704c59b265">EGenero</a> genero);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_administrador.html#a5e4cc3fbc1bb829bc7f66f0761ded98b">   23</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#a5e4cc3fbc1bb829bc7f66f0761ded98b">EditarUsuario</a>(<span class="keywordtype">string</span> matricula);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#a662c57904e559801ef5fc1dd8e04a8f5">AtualizarListaDeUsuarios</a>(vector&lt;User *&gt; list);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#ad8ef19131c15173280945bc61a2d991c">SetLivroByUsuario</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">string</span> matricula);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#ac0a89ce40816d46931ca57ccabe7cdca">validarMatricula</a>(<span class="keywordtype">string</span> matricula,<span class="keywordtype">int</span> perfil);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#af853103db23f4e5bdd2db7624afb609a">validarLivro</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#a46fee1633ae15b6d4ba907d0ea11e386">removerUsuario</a>(<span class="keywordtype">string</span> matricula, vector&lt;User *&gt; list);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">virtual</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_administrador.html#ae547d06b38b03bbb5c2ae7b8059829f9">GetDados</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_administrador.html#aa9266dade3e2ce0d27e49bdd72371016">Updatebkp</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_administrador.html#a78c415359245b2f6d0c61e569a39de71">Updatesrc</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#afb8a19030bf00ffb50034191986e9750">Devolucao</a>(<span class="keywordtype">string</span> matricula, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#ac413de9b6b73ee0b2e72ce70a97c0588">SetBloqueio</a>(<span class="keywordtype">string</span> matricula,<span class="keywordtype">string</span> block);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_administrador.html#af092425665391c05b15d53b47dd4b468">validarUsuario</a>(<span class="keywordtype">string</span> matricula);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_e_genero_8hpp_html_aff8860c1aa8ab550fcd18d704c59b265"><div class="ttname"><a href="_e_genero_8hpp.html#aff8860c1aa8ab550fcd18d704c59b265">EGenero</a></div><div class="ttdeci">EGenero</div><div class="ttdef"><b>Definition:</b> EGenero.hpp:8</div></div>
+<div class="ttc" id="a_e_perfil_8hpp_html_ac83143fe42e7015fce3096ea2b387d83"><div class="ttname"><a href="_e_perfil_8hpp.html#ac83143fe42e7015fce3096ea2b387d83">EPerfil</a></div><div class="ttdeci">EPerfil</div><div class="ttdef"><b>Definition:</b> EPerfil.hpp:8</div></div>
+<div class="ttc" id="a_livro_8hpp_html"><div class="ttname"><a href="_livro_8hpp.html">Livro.hpp</a></div></div>
+<div class="ttc" id="a_user_8hpp_html"><div class="ttname"><a href="_user_8hpp.html">User.hpp</a></div></div>
+<div class="ttc" id="a_usuario_8hpp_html"><div class="ttname"><a href="_usuario_8hpp.html">Usuario.hpp</a></div></div>
+<div class="ttc" id="aclass_administrador_html"><div class="ttname"><a href="class_administrador.html">Administrador</a></div><div class="ttdef"><b>Definition:</b> Administrador.hpp:9</div></div>
+<div class="ttc" id="aclass_administrador_html_a46fee1633ae15b6d4ba907d0ea11e386"><div class="ttname"><a href="class_administrador.html#a46fee1633ae15b6d4ba907d0ea11e386">Administrador::removerUsuario</a></div><div class="ttdeci">bool removerUsuario(string matricula, vector&lt; User * &gt; list)</div><div class="ttdoc">Função para remover um usuario.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:100</div></div>
+<div class="ttc" id="aclass_administrador_html_a4a3eecc3e9313702db41fb1538b2dcbd"><div class="ttname"><a href="class_administrador.html#a4a3eecc3e9313702db41fb1538b2dcbd">Administrador::SetUsuario</a></div><div class="ttdeci">bool SetUsuario(User *Usuario)</div><div class="ttdoc">Função para criar Usuario.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:80</div></div>
+<div class="ttc" id="aclass_administrador_html_a5262aeed85e64c478948be443fce8366"><div class="ttname"><a href="class_administrador.html#a5262aeed85e64c478948be443fce8366">Administrador::ListarUsuariosAtivos</a></div><div class="ttdeci">vector&lt; User * &gt; ListarUsuariosAtivos(vector&lt; User * &gt; usuarios)</div><div class="ttdoc">Função para listar Usuarios Ativos.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:58</div></div>
+<div class="ttc" id="aclass_administrador_html_a5e4cc3fbc1bb829bc7f66f0761ded98b"><div class="ttname"><a href="class_administrador.html#a5e4cc3fbc1bb829bc7f66f0761ded98b">Administrador::EditarUsuario</a></div><div class="ttdeci">bool EditarUsuario(string matricula)</div></div>
+<div class="ttc" id="aclass_administrador_html_a662c57904e559801ef5fc1dd8e04a8f5"><div class="ttname"><a href="class_administrador.html#a662c57904e559801ef5fc1dd8e04a8f5">Administrador::AtualizarListaDeUsuarios</a></div><div class="ttdeci">bool AtualizarListaDeUsuarios(vector&lt; User * &gt; list)</div><div class="ttdoc">Função para atulizar a lista de usuarios.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:270</div></div>
+<div class="ttc" id="aclass_administrador_html_a78c415359245b2f6d0c61e569a39de71"><div class="ttname"><a href="class_administrador.html#a78c415359245b2f6d0c61e569a39de71">Administrador::Updatesrc</a></div><div class="ttdeci">void Updatesrc()</div><div class="ttdoc">Função que atuyaliza os bancos de dados.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:313</div></div>
+<div class="ttc" id="aclass_administrador_html_aa222dd75ca3a727a0a9d3bb1ea42b0e5"><div class="ttname"><a href="class_administrador.html#aa222dd75ca3a727a0a9d3bb1ea42b0e5">Administrador::Administrador</a></div><div class="ttdeci">Administrador(string nome, string matricula, EPerfil perfil)</div><div class="ttdoc">Construct a new Administrador:: Administrador object.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:19</div></div>
+<div class="ttc" id="aclass_administrador_html_aa9266dade3e2ce0d27e49bdd72371016"><div class="ttname"><a href="class_administrador.html#aa9266dade3e2ce0d27e49bdd72371016">Administrador::Updatebkp</a></div><div class="ttdeci">void Updatebkp()</div><div class="ttdoc">função que atualiza os bancos de dados</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:302</div></div>
+<div class="ttc" id="aclass_administrador_html_ab2dfd8064593b9fffaf35aa7d28ab664"><div class="ttname"><a href="class_administrador.html#ab2dfd8064593b9fffaf35aa7d28ab664">Administrador::SetLivro</a></div><div class="ttdeci">bool SetLivro(string nome, EGenero genero)</div><div class="ttdoc">Função para criar um livro.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:116</div></div>
+<div class="ttc" id="aclass_administrador_html_ac0a89ce40816d46931ca57ccabe7cdca"><div class="ttname"><a href="class_administrador.html#ac0a89ce40816d46931ca57ccabe7cdca">Administrador::validarMatricula</a></div><div class="ttdeci">static bool validarMatricula(string matricula, int perfil)</div><div class="ttdoc">Função para validar a matricula relativa a um perfil.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:238</div></div>
+<div class="ttc" id="aclass_administrador_html_ac3319c407750ea9d9afe6b8bafdc322b"><div class="ttname"><a href="class_administrador.html#ac3319c407750ea9d9afe6b8bafdc322b">Administrador::Imprime</a></div><div class="ttdeci">virtual void Imprime() override</div><div class="ttdoc">Função para imprimir os dados do administrador.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:26</div></div>
+<div class="ttc" id="aclass_administrador_html_ac413de9b6b73ee0b2e72ce70a97c0588"><div class="ttname"><a href="class_administrador.html#ac413de9b6b73ee0b2e72ce70a97c0588">Administrador::SetBloqueio</a></div><div class="ttdeci">bool SetBloqueio(string matricula, string block)</div><div class="ttdoc">Função para bloquear um usuario.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:400</div></div>
+<div class="ttc" id="aclass_administrador_html_ad8ef19131c15173280945bc61a2d991c"><div class="ttname"><a href="class_administrador.html#ad8ef19131c15173280945bc61a2d991c">Administrador::SetLivroByUsuario</a></div><div class="ttdeci">bool SetLivroByUsuario(int id, string matricula)</div><div class="ttdoc">Função para associar um livro a um usuario.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:163</div></div>
+<div class="ttc" id="aclass_administrador_html_ae547d06b38b03bbb5c2ae7b8059829f9"><div class="ttname"><a href="class_administrador.html#ae547d06b38b03bbb5c2ae7b8059829f9">Administrador::GetDados</a></div><div class="ttdeci">virtual string GetDados() override</div><div class="ttdoc">Função para listar os dados de um determiado usuario.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:294</div></div>
+<div class="ttc" id="aclass_administrador_html_af092425665391c05b15d53b47dd4b468"><div class="ttname"><a href="class_administrador.html#af092425665391c05b15d53b47dd4b468">Administrador::validarUsuario</a></div><div class="ttdeci">bool validarUsuario(string matricula)</div><div class="ttdoc">Função para validar se a matriicula existe no banco.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:141</div></div>
+<div class="ttc" id="aclass_administrador_html_af853103db23f4e5bdd2db7624afb609a"><div class="ttname"><a href="class_administrador.html#af853103db23f4e5bdd2db7624afb609a">Administrador::validarLivro</a></div><div class="ttdeci">bool validarLivro(int id)</div><div class="ttdoc">Função para validar se o id do livro existe no banco.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:254</div></div>
+<div class="ttc" id="aclass_administrador_html_afb82b505b836ad1d8fef6f813907f6dd"><div class="ttname"><a href="class_administrador.html#afb82b505b836ad1d8fef6f813907f6dd">Administrador::ListarLivrosBloqueados</a></div><div class="ttdeci">vector&lt; Livro * &gt; ListarLivrosBloqueados(vector&lt; Livro * &gt; livros)</div><div class="ttdoc">Função Para Listar Livros Bloqueados.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:37</div></div>
+<div class="ttc" id="aclass_administrador_html_afb8a19030bf00ffb50034191986e9750"><div class="ttname"><a href="class_administrador.html#afb8a19030bf00ffb50034191986e9750">Administrador::Devolucao</a></div><div class="ttdeci">bool Devolucao(string matricula, int id)</div><div class="ttdoc">Função para retirar um livro da lista de emprestimos de um determinado usuario.</div><div class="ttdef"><b>Definition:</b> Administrador.cpp:328</div></div>
+<div class="ttc" id="aclass_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdef"><b>Definition:</b> User.hpp:12</div></div>
+<div class="ttc" id="aclass_usuario_html"><div class="ttname"><a href="class_usuario.html">Usuario</a></div><div class="ttdef"><b>Definition:</b> Usuario.hpp:9</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

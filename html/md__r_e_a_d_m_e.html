@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacao_Doxygen: 📚 SISTEMA DE CADASTRO BIBLIOTECÁRIO 📚</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="istockphoto-1271339527-612x612.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentacao_Doxygen<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">PDS2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">📚 SISTEMA DE CADASTRO BIBLIOTECÁRIO 📚 </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p >Projeto final de PDSII visando o sistema de cadastro de livros em uma biblioteca com variações de funcionamento (administrador e usuário).</p>
+<p ><img src="https://user-images.githubusercontent.com/107284442/177864815-aff5a1d0-0366-4677-b426-63b4d12db82c.JPG" alt="Capturar" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+⚠️ USER STORIES:</h1>
+<p >1) <b>Descrição: Como um usuário comum, eu quero selecionar um livro para realizar o empréstimo dele.</b></p>
+<p >Critérios de aceitação:</p>
+<p >a) Visualizar títulos emprestados ao usuário;</p>
+<p >b) Verificar se usuário está ativo;</p>
+<p >c) Verificar se o livro está disponível;</p>
+<p >2) <b>Descrição: Como um usuário administrador, eu preciso bloquear um usuário para impedi-lo de solicitar empréstimos.</b></p>
+<p >Critérios de aceitação:</p>
+<p >a) Exibir a lista de usuários bloqueados;</p>
+<p >b) Emitir alerta de proibição de empréstimo para usuários bloqueados;</p>
+<p >3) <b>Descrição: Como um usuário administrador, eu preciso adicionar um usuário para que ele tenha acesso à biblioteca.</b></p>
+<p >Critérios de aceitação:</p>
+<p >a) Acessar a lista de usuários ativos;</p>
+<p >b) Exibir retorno do programa com as inscrições "Usuário adicionado";</p>
+<p >4) <b>Descrição: Como um usuário comum, eu quero ver os livros disponíveis para poder escolher um título para empréstimo.</b></p>
+<p >Critérios de aceitação:</p>
+<p >a) Exibir a lista de livros disponíveis;</p>
+<p >b) Exibir se a disponibilidade (ou indisponibilidade) do livro;</p>
+<p >c) Solicitar confirmação de empréstimo ao usuário;</p>
+<p >5) <b>Descrição: Como um novo livro, eu preciso ser cadastrado no sistema para ser armazenado na biblioteca.</b></p>
+<p >Critérios de aceitação:</p>
+<p >a) Ver a lista de livros disponíveis;</p>
+<p >b) Exibir retorno do programa com os dizeres "Título adicionado com sucesso!"</p>
+<p >c) Impedir que o título seja cadastrado mais de uma vez no sistema;</p>
+<p >6) <b>Descrição: Como um usuário comum, eu quero devolver um livro para ser desbloqueado da biblioteca.</b></p>
+<p >Critérios de aceitação:</p>
+<p >a) Desbloquear o acesso do usuário;</p>
+<p >b) Exibiir lista de usuários bloqueados;</p>
+<p >c) Exibir aviso de "Usuário desbloqueado com sucesso!"</p>
+<p >d) Exibir lista de livros devolvidos.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+💻 QUERO FAZER USO DO SISTEMA, POR ONDE COMEÇAR❓</h1>
+<p ><em>Para fazer uso do repositório, você precisa preencher as requisições abaixo:</em></p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Requisitos iniciais:</h2>
+<p >1) Possuir um compilador C++ instalado (recomendamos o Visual Studio Code); 2) Ter um sistema operacional LINUX ou uma interface com este. 3) Instalar a extensão "cmake" no seu compilador; 4) Possuir o git instalado e devidamente logado na IDE em questão; 5) Possuir a IDE configurada para uso em WSL;</p>
+<p ><em>Uma vez que os requisitos iniciais foram preenchidos, partiremos para a instalação do sistema:</em> </p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Instalação:</h2>
+<p ><em>Faça os seguintes procedimentos no terminal da sua IDE (considerando o uso em WSL):</em></p>
+<p >1) Clone o repositório:</p>
+<div class="fragment"><div class="line">git clone https://github.com/filipefsf/cadastrobiblioteca.git</div>
+</div><!-- fragment --><p >2) Acesse o diretório do repositório:</p>
+<div class="fragment"><div class="line">cd cadastrobiblioteca</div>
+</div><!-- fragment --><p >3) Execute o comando "make":</p>
+<div class="fragment"><div class="line">make</div>
+</div><!-- fragment --><p >4) Para rodar o programa, digite o seguinte comando:</p>
+<div class="fragment"><div class="line">./main</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentacao_Doxygen: Código-Fonte de include/User.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="istockphoto-1271339527-612x612.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">Documentacao_Doxygen<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">PDS2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">User.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_user_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef User_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define User_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&lt;iostream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include&lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include&lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include&quot;<a class="code" href="_e_perfil_8hpp.html">EPerfil.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include&quot;<a class="code" href="_livro_8hpp.html">Livro.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_user.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="class_user.html">User</a>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_user.html#ad7136a90e1fb2d9786a0299b324f38f9">   14</a></span>        <span class="keywordtype">string</span> <a class="code hl_variable" href="class_user.html#ad7136a90e1fb2d9786a0299b324f38f9">_nome</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_user.html#aad41198a93cba36d1ac57178eecab49d">   15</a></span>        <span class="keywordtype">string</span> <a class="code hl_variable" href="class_user.html#aad41198a93cba36d1ac57178eecab49d">_matricula</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_user.html#ab96d10221e53f22085d77d0f10073c13">   16</a></span>        <a class="code hl_enumeration" href="_e_perfil_8hpp.html#ac83143fe42e7015fce3096ea2b387d83">EPerfil</a> <a class="code hl_variable" href="class_user.html#ab96d10221e53f22085d77d0f10073c13">_perfil</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_user.html#a3aaa5c36c19b76c0ed57241dd34f5de8">   17</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_user.html#a3aaa5c36c19b76c0ed57241dd34f5de8">_active</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_user.html#a9dde71cb95013c5d451851aa0204c636">   19</a></span>        vector&lt;Livro*&gt;<a class="code hl_function" href="class_user.html#a9dde71cb95013c5d451851aa0204c636">ListarLivrosDisponiveis</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_function" href="class_user.html#a014f0d5274e0a3c52705a54ad9b8b228">User</a>(<span class="keywordtype">string</span> nome, <span class="keywordtype">string</span> matricula, <a class="code hl_enumeration" href="_e_perfil_8hpp.html#ac83143fe42e7015fce3096ea2b387d83">EPerfil</a> perfil, <span class="keywordtype">bool</span> active);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_function" href="class_user.html#a014f0d5274e0a3c52705a54ad9b8b228">User</a>(<span class="keywordtype">string</span> nome, <span class="keywordtype">string</span> matricula, <a class="code hl_enumeration" href="_e_perfil_8hpp.html#ac83143fe42e7015fce3096ea2b387d83">EPerfil</a> perfil);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">static</span> vector&lt;User*&gt; <a class="code hl_function" href="class_user.html#a05377bdf4aa63e53821f88f5e3097d1c">GetAllUsers</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">static</span> vector&lt;User*&gt; <a class="code hl_function" href="class_user.html#a01124d57c755a69963ed3e0a311ae923">GetBlockUsers</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_user.html#aa24f889837908fe7d785c5e3a231a6d9">   24</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_user.html#aa24f889837908fe7d785c5e3a231a6d9">Imprime</a>() = 0;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_user.html#a5ae18935f1142f5756536345376c9b70">   25</a></span>        <span class="keyword">virtual</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_user.html#a5ae18935f1142f5756536345376c9b70">GetDados</a>() = 0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">string</span> <a class="code hl_function" href="class_user.html#a3995f54b7fc766b6d15685936c063045">GetStatusUser</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">string</span> <a class="code hl_function" href="class_user.html#a14f508ec11c87770c8b4a917cafbdae9">GetMatricula</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">string</span> <a class="code hl_function" href="class_user.html#a2db96a06b58d6eeb3d1772bc2516253f">GetNome</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_user.html#aab9c02c79093ec7d99e7b579c4a7d736">GetPerfil</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_e_perfil_8hpp_html"><div class="ttname"><a href="_e_perfil_8hpp.html">EPerfil.hpp</a></div></div>
+<div class="ttc" id="a_e_perfil_8hpp_html_ac83143fe42e7015fce3096ea2b387d83"><div class="ttname"><a href="_e_perfil_8hpp.html#ac83143fe42e7015fce3096ea2b387d83">EPerfil</a></div><div class="ttdeci">EPerfil</div><div class="ttdef"><b>Definition:</b> EPerfil.hpp:8</div></div>
+<div class="ttc" id="a_livro_8hpp_html"><div class="ttname"><a href="_livro_8hpp.html">Livro.hpp</a></div></div>
+<div class="ttc" id="aclass_user_html"><div class="ttname"><a href="class_user.html">User</a></div><div class="ttdef"><b>Definition:</b> User.hpp:12</div></div>
+<div class="ttc" id="aclass_user_html_a01124d57c755a69963ed3e0a311ae923"><div class="ttname"><a href="class_user.html#a01124d57c755a69963ed3e0a311ae923">User::GetBlockUsers</a></div><div class="ttdeci">static vector&lt; User * &gt; GetBlockUsers()</div><div class="ttdoc">Pegar usuarios bloqueados.</div><div class="ttdef"><b>Definition:</b> user.cpp:43</div></div>
+<div class="ttc" id="aclass_user_html_a014f0d5274e0a3c52705a54ad9b8b228"><div class="ttname"><a href="class_user.html#a014f0d5274e0a3c52705a54ad9b8b228">User::User</a></div><div class="ttdeci">User(string nome, string matricula, EPerfil perfil, bool active)</div><div class="ttdoc">Construct a new User:: User object.</div><div class="ttdef"><b>Definition:</b> user.cpp:17</div></div>
+<div class="ttc" id="aclass_user_html_a05377bdf4aa63e53821f88f5e3097d1c"><div class="ttname"><a href="class_user.html#a05377bdf4aa63e53821f88f5e3097d1c">User::GetAllUsers</a></div><div class="ttdeci">static vector&lt; User * &gt; GetAllUsers()</div><div class="ttdoc">Pegar todos os usuarios.</div><div class="ttdef"><b>Definition:</b> user.cpp:58</div></div>
+<div class="ttc" id="aclass_user_html_a14f508ec11c87770c8b4a917cafbdae9"><div class="ttname"><a href="class_user.html#a14f508ec11c87770c8b4a917cafbdae9">User::GetMatricula</a></div><div class="ttdeci">string GetMatricula()</div><div class="ttdoc">retorna a matricula do usuario</div><div class="ttdef"><b>Definition:</b> user.cpp:104</div></div>
+<div class="ttc" id="aclass_user_html_a2db96a06b58d6eeb3d1772bc2516253f"><div class="ttname"><a href="class_user.html#a2db96a06b58d6eeb3d1772bc2516253f">User::GetNome</a></div><div class="ttdeci">string GetNome()</div><div class="ttdoc">retorna o nome do usuario</div><div class="ttdef"><b>Definition:</b> user.cpp:112</div></div>
+<div class="ttc" id="aclass_user_html_a3995f54b7fc766b6d15685936c063045"><div class="ttname"><a href="class_user.html#a3995f54b7fc766b6d15685936c063045">User::GetStatusUser</a></div><div class="ttdeci">string GetStatusUser()</div><div class="ttdoc">Pegar o status do usuario.</div><div class="ttdef"><b>Definition:</b> user.cpp:96</div></div>
+<div class="ttc" id="aclass_user_html_a3aaa5c36c19b76c0ed57241dd34f5de8"><div class="ttname"><a href="class_user.html#a3aaa5c36c19b76c0ed57241dd34f5de8">User::_active</a></div><div class="ttdeci">bool _active</div><div class="ttdef"><b>Definition:</b> User.hpp:17</div></div>
+<div class="ttc" id="aclass_user_html_a5ae18935f1142f5756536345376c9b70"><div class="ttname"><a href="class_user.html#a5ae18935f1142f5756536345376c9b70">User::GetDados</a></div><div class="ttdeci">virtual string GetDados()=0</div></div>
+<div class="ttc" id="aclass_user_html_a9dde71cb95013c5d451851aa0204c636"><div class="ttname"><a href="class_user.html#a9dde71cb95013c5d451851aa0204c636">User::ListarLivrosDisponiveis</a></div><div class="ttdeci">vector&lt; Livro * &gt; ListarLivrosDisponiveis()</div></div>
+<div class="ttc" id="aclass_user_html_aa24f889837908fe7d785c5e3a231a6d9"><div class="ttname"><a href="class_user.html#aa24f889837908fe7d785c5e3a231a6d9">User::Imprime</a></div><div class="ttdeci">virtual void Imprime()=0</div></div>
+<div class="ttc" id="aclass_user_html_aab9c02c79093ec7d99e7b579c4a7d736"><div class="ttname"><a href="class_user.html#aab9c02c79093ec7d99e7b579c4a7d736">User::GetPerfil</a></div><div class="ttdeci">int GetPerfil()</div><div class="ttdoc">retorna o perfil do usuario</div><div class="ttdef"><b>Definition:</b> user.cpp:121</div></div>
+<div class="ttc" id="aclass_user_html_aad41198a93cba36d1ac57178eecab49d"><div class="ttname"><a href="class_user.html#aad41198a93cba36d1ac57178eecab49d">User::_matricula</a></div><div class="ttdeci">string _matricula</div><div class="ttdef"><b>Definition:</b> User.hpp:15</div></div>
+<div class="ttc" id="aclass_user_html_ab96d10221e53f22085d77d0f10073c13"><div class="ttname"><a href="class_user.html#ab96d10221e53f22085d77d0f10073c13">User::_perfil</a></div><div class="ttdeci">EPerfil _perfil</div><div class="ttdef"><b>Definition:</b> User.hpp:16</div></div>
+<div class="ttc" id="aclass_user_html_ad7136a90e1fb2d9786a0299b324f38f9"><div class="ttname"><a href="class_user.html#ad7136a90e1fb2d9786a0299b324f38f9">User::_nome</a></div><div class="ttdeci">string _nome</div><div class="ttdef"><b>Definition:</b> User.hpp:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
