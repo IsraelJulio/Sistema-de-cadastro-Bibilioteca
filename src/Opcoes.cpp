@@ -101,6 +101,7 @@ void Opcoes::OpcoesAdm(string nome)
     cout<< "[5] Efetuar Devolucao" << endl;
     cout<< "[6] Desbloquear Usuario" << endl;
     cout<< "[7] Efetuar Emprestimo para usuario"<< endl;
+    cout<< "[8] Cadastrar um novo usuario"<< endl;
     SaltarLinhas(3);   
     cout<< "[9] Voltar ao Menu Principal" << endl;
 }

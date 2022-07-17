@@ -115,6 +115,7 @@ bool Administrador::removerUsuario(string matricula, vector<User *> list)
  */
 bool Administrador::SetLivro(string nome, EGenero genero)
 {
+    nome = Operacoes::contencao(nome);
     auto livros = Livro::CarregarLivrosSalvos();
     int id = livros.back()->GetId();
     Livro* novo = new Livro(id+1,nome,genero,true);
@@ -140,7 +141,6 @@ bool Administrador::SetLivro(string nome, EGenero genero)
  */
 bool Administrador::validarUsuario(string matricula)
 {
-    auto pog = Usuario::GetUserByMatricula(matricula);
     auto checkList = GetBlockUsers();
     for(auto user : checkList)
     {
@@ -162,6 +162,7 @@ bool Administrador::validarUsuario(string matricula)
  */
 bool Administrador::SetLivroByUsuario(int id, string matricula)
 {
+    matricula = Operacoes::contencao(matricula);
     vector<User*> usuariosSalvos = User::GetAllUsers();
     vector<Livro*> livrosSalvos;
     ifstream arq("Usuarios.txt");
@@ -327,6 +328,7 @@ void Administrador::Updatesrc()
  */
 bool Administrador::Devolucao(string matricula, int id)
 {
+
     vector<User*> usuariosSalvos = User::GetAllUsers();
     vector<Livro*> livrosSalvos;
     ifstream arq("Usuarios.txt");
@@ -399,6 +401,7 @@ bool Administrador::Devolucao(string matricula, int id)
  */
 bool Administrador::SetBloqueio(string matricula, string block)
 {
+    matricula = Operacoes::contencao(matricula);
     vector<User*> usuariosSalvos = User::GetAllUsers();
     vector<Livro*> livrosSalvos;
     ifstream arq("Usuarios.txt");

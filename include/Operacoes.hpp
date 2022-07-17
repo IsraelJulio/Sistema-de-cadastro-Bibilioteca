@@ -18,8 +18,20 @@ class Operacoes{
         *o++ = { first, next };
         first = next;
         first++;
+        }
     }
-}
+
+    static string contencao(string nome)
+    {
+        bool skip = false;
+        while(!skip){
+        if(find(nome.begin(), nome.end(),',') != nome.end())
+            nome.erase(find(nome.begin(), nome.end(), ','));
+        else
+            skip = true;
+    }
+        return nome;
+    }
 };
 
 #endif

@@ -39,6 +39,7 @@ bool menu::TelaPrincipal()
     string matricula = "";
     std::vector<string> principal = { "0", "1", "9" };
     std::vector<string> comum = { "0", "1", "9" };
+    std::vector<string> opAdmMenu = { "0", "1", "2" , "3", "4", "5", "6", "7", "8", "9" };
     std::vector<string> opAdm = { "0", "1", "2" , "3", "4", "5", "6", "7", "9" };
     this->SetTelaPrincipal(true);
 
@@ -161,7 +162,7 @@ bool menu::TelaPrincipal()
                 if(resposta == "9")
                 return false;
 
-                if(std::find(opAdm.begin(), opAdm.end(), resposta) != opAdm.end())
+                if(std::find(opAdmMenu.begin(), opAdmMenu.end(), resposta) != opAdmMenu.end())
                     skip = true;
                 else
                     Opcoes::OpcaoInvalida();

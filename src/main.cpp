@@ -4,11 +4,14 @@
 #include "../include/Administrador.hpp"
 #include "../include/menu.hpp"
 #include "../include/Opcoes.hpp"
+#include<string.h>
+#include<iostream>
+#include<algorithm>
 
 using namespace std;
 
-int main() {
 
+int main() {
     menu* m = new menu();
     m->LimparTela();
     m->Titulo();
@@ -26,11 +29,5 @@ int main() {
             m->LimparTela();
         }
     }
-
-
-
-
-
-
     return 0;
 }
