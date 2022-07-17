@@ -173,3 +173,16 @@ void Opcoes::CadastroFalha()
 {
     cout << "Operacao realizada com falha! " << endl << "Parece que o Arquivo .txt esta aberto =(" << endl;
 }
+
+void Opcoes::InformeLivroId()
+{
+    cout << "Informe o Id do livro que deseja devolver" << endl;
+}
+
+void Opcoes::DadosIncorretos()
+{
+    cout << "Dados incorretos" << endl;
+    cout << "Verifique se:" << endl;
+    cout << "- o usuario esta com este livro" << endl;
+    cout << "- o arquivo .txt se encontra fechado" << endl << endl;
+}

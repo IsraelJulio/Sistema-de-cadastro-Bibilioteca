@@ -26,6 +26,9 @@ public:
     static void CadastroFalha();
     static void OpcaoInvalida();
     static void InformeMatricula();
+    static void InformeLivroId();
+    static void DadosIncorretos();
+
 
 
 
