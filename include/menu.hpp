@@ -8,8 +8,11 @@ using namespace std;
 class menu
 {
 private:
+    bool _telaprincipal;
 public:
     
+    bool GetTelaPrincipal();
+    void SetTelaPrincipal(bool value);
     bool GetUsuario(string matricula);
     void Titulo();
     void LimparTela();
@@ -19,6 +22,7 @@ public:
     bool Admin();
     bool UsuarioComum(bool force=false);
     bool Navegacao(string input);
+    
 
 };
 

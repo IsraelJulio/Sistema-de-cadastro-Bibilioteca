@@ -16,8 +16,14 @@ int main() {
     while(run)
     {
         if(!m->Run())
-        {
+        { 
+            m->LimparTela();
+            
+            if(!m->GetTelaPrincipal())
+                m->TelaPrincipal();
+
             run = Opcoes::OpcoesEncerrar();
+            m->LimparTela();
         }
     }
 

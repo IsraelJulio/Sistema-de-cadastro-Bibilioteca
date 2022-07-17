@@ -1,7 +1,12 @@
-    #include"../include/Opcoes.hpp"
-    #include<iostream>
-    #include<algorithm>
-    #include <string>
+#include"../include/Opcoes.hpp"
+
+
+
+#include<string.h>
+#include<iostream>
+#include<algorithm>
+#include <vector>
+#include<stdio.h>
 
 void Opcoes::SaltarLinhas( int linhas)
 {
@@ -48,13 +53,50 @@ void Opcoes::LimparTela()
 
 bool Opcoes::OpcoesEncerrar()
 {
-    cout << "Deseja Encerrar o Programa?" << endl;
-    SaltarLinhas(3);
-    cout << "[Y] Sim" << "\t" << "[N] Nao" << endl;
-    char resposta;
-    cin >> resposta;
-    if(std::toupper(resposta) == 'Y')
-        return false;
+    bool skip = false;
+    std::vector<string> encerrar = { "0",  "9" };
+    while(!skip)
+    {
+        cout << "Deseja Encerrar o Programa?" << endl;
+        SaltarLinhas(3);
+        cout << "[Y] Sim" << "\t" << "[N] Nao" << endl;
+        char resposta;
+        cin >> resposta;
+        if(std::toupper(resposta) == 'Y')
+            return false;
+
+        if(std::toupper(resposta) == 'N')
+            skip = true;
+            
+
+        LimparTela();
+        cout << "************* opcao invalida *********************" << endl;
+     }
+    
+
+    return true;
+}
+bool Opcoes::VoltarUsuario()
+{
+    bool skip = false;
+    std::vector<string> voltar = { "0",  "9" };
+    while(!skip)
+    {
+        string resposta = "";
+        SaltarLinhas(5);
+        cout<< "[0] Voltar ao Menu Anterior" << endl;
+        cout<< "[9] Voltar ao Menu Principal" << endl;
+        cin >> resposta;
+
+        if(resposta == "0")
+            return false;
+
+        if(resposta == "9")
+            skip = true;     
+
+        LimparTela();
+        cout << "************* opcao invalida *********************" << endl;   
+    }
 
     return true;
 

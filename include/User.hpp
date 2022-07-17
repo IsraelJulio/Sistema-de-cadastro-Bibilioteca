@@ -28,6 +28,7 @@ class User{
         string GetNome();
         int GetPerfil();
         
+        
 };
 
 #endif

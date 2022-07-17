@@ -16,6 +16,7 @@ public:
     static void OpcoesUsuario(string nome);
     static bool OpcoesEncerrar();
     static void LimparTela();
+    static bool VoltarUsuario();
 
 };
 

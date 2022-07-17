@@ -79,3 +79,4 @@ int User::GetPerfil()
 {
   return _perfil == EPerfil::ADMIN ? 0 : 1;
 }
+
