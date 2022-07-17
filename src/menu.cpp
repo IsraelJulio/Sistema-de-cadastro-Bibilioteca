@@ -66,7 +66,7 @@ bool menu::TelaPrincipal()
 
     if(std::find(principal.begin(), principal.end(), resposta) == principal.end()){
         LimparTela();
-        cout << "*************opcao invalida*********************" << endl;
+        Opcoes::OpcaoInvalida();
         TelaPrincipal();
     }
     LimparTela();
@@ -83,7 +83,7 @@ bool menu::TelaPrincipal()
             if(Administrador::validarMatricula(matricula,1))                
                 skip = true;
             else
-                cout << "************* matricula invalida *********************" << endl;    
+                Opcoes::OpcaoInvalida();    
         }
         
         skip = false;
@@ -104,7 +104,7 @@ bool menu::TelaPrincipal()
                 if(std::find(comum.begin(), comum.end(), resposta) != comum.end())
                     skip = true;
                 else
-                    cout << "************* opcao invalida *********************" << endl;
+                    Opcoes::OpcaoInvalida();
 
             }
             skip = false;
@@ -155,7 +155,7 @@ bool menu::TelaPrincipal()
             if(Administrador::validarMatricula(matricula,0))                
                 skip = true;
             else
-                cout << "************* matricula invalida *********************" << endl;    
+                Opcoes::OpcaoInvalida();   
         }
         skip = false;
         auto u = Usuario::GetUserByMatricula(matricula);
@@ -175,7 +175,7 @@ bool menu::TelaPrincipal()
                 if(std::find(opAdm.begin(), opAdm.end(), resposta) != opAdm.end())
                     skip = true;
                 else
-                    cout << "************* opcao invalida *********************" << endl;
+                    Opcoes::OpcaoInvalida();
             }
             skip = false;
             if(resposta == "0")
@@ -198,7 +198,7 @@ bool menu::TelaPrincipal()
                     if(std::find(opAdm.begin(), opAdm.end(), resposta) != opAdm.end())
                         skip = true;
                     else
-                        cout << "************* opcao invalida *********************" << endl;
+                        Opcoes::OpcaoInvalida();
                 }
                 skip = false;
 
@@ -218,7 +218,7 @@ bool menu::TelaPrincipal()
                 {
                         livro->Imprime();
                 }
-                
+
                 voltarOpAdm = Opcoes::VoltarUsuario();
 
                 if(voltarOpAdm)

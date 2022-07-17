@@ -22,6 +22,10 @@ void Opcoes::OpcoesLogin()
     cout<< "[1] Login como Usuario" << endl;
     cout<< "[9] fechar programa" << endl;
 }
+void Opcoes::OpcaoInvalida()
+{
+    cout << "************* opcao invalida *********************" << endl;
+}
 void Opcoes::OpcoesMenu()
 {
 
@@ -87,7 +91,7 @@ bool Opcoes::OpcoesEncerrar()
             
 
         LimparTela();
-        cout << "************* opcao invalida *********************" << endl;
+        OpcaoInvalida();
      }
     
 
@@ -112,7 +116,7 @@ bool Opcoes::VoltarUsuario()
             skip = true;     
 
         LimparTela();
-        cout << "************* opcao invalida *********************" << endl;   
+        OpcaoInvalida();  
     }
 
     return true;

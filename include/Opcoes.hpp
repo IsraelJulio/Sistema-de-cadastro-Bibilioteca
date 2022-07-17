@@ -24,6 +24,7 @@ public:
     static void OpcaoLivroGeneroDisponivel();
     static void CadastroSucesso();
     static void CadastroFalha();
+    static void OpcaoInvalida();
 
 
 };
