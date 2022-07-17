@@ -41,8 +41,8 @@ vector<User*> User::GetAllUsers(){
     {
         while (getline(arq, conteudo)){
           Operacoes::split(conteudo.begin(),conteudo.end(),',', back_inserter(value));  
-          if (value.size() < 5)
-          {
+          if (stoi(value[2]) == 1)
+          { 
             Administrador* admin = new Administrador(value[0],value[1],EPerfil::ADMIN,stoi(value[3])==1);
             usuariosSalvos.push_back(admin);
           } else {

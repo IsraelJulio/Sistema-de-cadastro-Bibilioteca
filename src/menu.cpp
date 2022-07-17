@@ -235,7 +235,22 @@ bool menu::TelaPrincipal()
                     user->Imprime();
                 }
 
-            voltarOpAdm = Opcoes::VoltarUsuario();
+                voltarOpAdm = Opcoes::VoltarUsuario();
+
+                if(voltarOpAdm)
+                    return false;
+                LimparTela();
+            }
+            if(resposta == "3")
+            {
+                Opcoes::OpcaoSelecionada("Visualizar Usuarios Bloqueados!");
+                auto blockUsers = User::GetBlockUsers(); 
+                 for(auto user : blockUsers)
+                {
+                    user->Imprime();
+                }
+
+                voltarOpAdm = Opcoes::VoltarUsuario();
 
                 if(voltarOpAdm)
                     return false;

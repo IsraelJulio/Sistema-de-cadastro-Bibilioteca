@@ -11,12 +11,17 @@ Usuario::Usuario(string nome, string matricula, EPerfil perfil,vector<Livro*> li
     _meusLivros = livros;
 }
 void Usuario::Imprime(){
-     cout <<endl <<  "Perfil: USUARIO \nNome: " << _nome << "\nMATRICULA: " << _matricula  << endl;
-    cout << "Livros Reservados: " << endl;
-    for(auto lv : _meusLivros)
+    cout <<endl <<  "Perfil: USUARIO \nNome: " << _nome << "\nMATRICULA: " << _matricula  << endl;
+    if(_meusLivros.size() != 0)
     {
-        lv->Imprime();
+        cout << "Livros Reservados: " << endl;
+
+        for(auto lv : _meusLivros)
+        {
+            lv->Imprime();
+        }
     }
+
     return;
 }
 
