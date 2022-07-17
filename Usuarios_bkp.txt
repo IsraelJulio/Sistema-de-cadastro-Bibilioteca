@@ -2,4 +2,4 @@ Israel Jhonatas,2020027008,1,1
 Usuario comum,123456,2,1,2,3
 novo admin,0000001,1,1
 novo usuario comum 2,000000002,2,0,7
-Hulk,46,2,1
+Hulk,46,2,1,4

@@ -133,8 +133,6 @@ bool Opcoes::VoltarUsuario()
 
 void Opcoes::OpcaoSelecionada(string opcao)
 {
-    SaltarLinhas(5);
-    LimparTela();
     cout << "******************************************************" << endl;
     cout << "opcao Selecionada: "<< opcao <<endl;
     cout << "******************************************************" << endl;
@@ -176,7 +174,7 @@ void Opcoes::CadastroFalha()
 
 void Opcoes::InformeLivroId()
 {
-    cout << "Informe o Id do livro que deseja devolver" << endl;
+    cout << "Informe o Id do livro" << endl;
 }
 
 void Opcoes::DadosIncorretos()
@@ -185,4 +183,9 @@ void Opcoes::DadosIncorretos()
     cout << "Verifique se:" << endl;
     cout << "- o usuario esta com este livro" << endl;
     cout << "- o arquivo .txt se encontra fechado" << endl << endl;
+}
+
+void Opcoes::UsuarioBloqueado()
+{
+    cout << "O Usuario se encontra bloqueado no sistema para pegar novos livros!" <<endl;
 }

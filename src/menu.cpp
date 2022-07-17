@@ -267,8 +267,7 @@ bool menu::TelaPrincipal()
                 int livroId = 0;
                 while(skip != true)
                 {
-                Opcoes::OpcaoSelecionada("Devolucao de Livros!");
-                Opcoes::InformeMatricula();
+                    Opcoes::OpcaoSelecionada("Devolucao de Livros!");
                     Opcoes::InformeMatricula();
                     cin >> matricula;
                     if(matricula == "9")
@@ -285,9 +284,9 @@ bool menu::TelaPrincipal()
                 {
                     Opcoes::InformeLivroId();
                     cin >> resposta;                    
-                    LimparTela();            
                     try
                     {
+                        LimparTela();            
                         livroId = stoi(resposta);
                         if(_adm->validarLivro(livroId))                
                             skip = true;
@@ -309,11 +308,10 @@ bool menu::TelaPrincipal()
             }
             if(resposta == "6")
             {
-                Opcoes::OpcaoSelecionada("Desbloquear Usuario!");
-                Opcoes::InformeMatricula();
-
                 while(skip != true)
                 {
+                    Opcoes::OpcaoSelecionada("Desbloquear Usuario!");
+                    Opcoes::InformeMatricula();
                     cin >> matricula;
                     if(matricula == "9")
                     return false;
@@ -330,6 +328,49 @@ bool menu::TelaPrincipal()
                 else
                     Opcoes::CadastroFalha();
             }
+            if(resposta == "7")
+            {
+                int livroId = 0;
+                while(skip != true)
+                {
+                    Opcoes::OpcaoSelecionada("Efetuar Emprestimo para usuario!");
+                    Opcoes::InformeMatricula();
+                    cin >> matricula;
+                    if(matricula == "9")
+                    return false;
+                    LimparTela();            
+                    if(_adm->validarMatricula(matricula,1))                
+                        skip = true;
+                    else
+                        Opcoes::OpcaoInvalida();   
+                }
+                skip = false;
+                
+                while(skip != true)
+                {
+                    Opcoes::InformeLivroId();
+                    cin >> resposta;                    
+                    try
+                    {
+                        LimparTela();            
+                        livroId = stoi(resposta);
+                        if(_adm->validarLivro(livroId))                
+                            skip = true;
+                        else
+                            Opcoes::OpcaoInvalida();
+                    }
+                    catch(const std::exception& e)
+                    {
+                        Opcoes::OpcaoInvalida();
+                    }                  
+
+                 }
+                 skip = false;
+                 if(_adm->SetLivroByUsuario(livroId,matricula))
+                    Opcoes::CadastroSucesso();
+
+            }
+                 skip = false;
              voltarOpAdm = Opcoes::VoltarUsuario();
 
                 if(voltarOpAdm)

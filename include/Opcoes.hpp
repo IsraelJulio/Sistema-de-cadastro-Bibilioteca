@@ -28,6 +28,7 @@ public:
     static void InformeMatricula();
     static void InformeLivroId();
     static void DadosIncorretos();
+    static void UsuarioBloqueado();
 
 
 

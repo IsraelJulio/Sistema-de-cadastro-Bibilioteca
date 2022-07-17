@@ -1,5 +1,6 @@
 #include "../include/Administrador.hpp"
 #include"../include/Operacoes.hpp"
+#include"../include/Opcoes.hpp"
 #include <iostream>
 #include <fstream>
 #include <typeinfo>
@@ -79,6 +80,19 @@ bool Administrador::SetLivro(string nome, EGenero genero)
     livro_txt.close();
     return true;
 }
+bool Administrador::validarUsuario(string matricula)
+{
+    auto pog = Usuario::GetUserByMatricula(matricula);
+    auto checkList = GetBlockUsers();
+    for(auto user : checkList)
+    {
+        if(user->GetMatricula() == matricula){
+            Opcoes::UsuarioBloqueado();
+            return false;
+        }
+    }
+    return true;
+}
 
 bool Administrador::SetLivroByUsuario(int id, string matricula)
 {
@@ -89,15 +103,12 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
     vector<string> value;
     string livros ="";
     bool eq = false;
-    // std::ofstream ofs("test.txt", std::ofstream::trunc);
     ofstream beckup ("Usuarios_bkp.txt", std::ofstream::trunc);
     string _id = to_string(id);
 
-    if(!validarMatricula(matricula,1))
-        return false; // todo exceção;
-    if(!validarLivro(id))
-        return false; // todo exceção;
-    
+    if(!validarUsuario(matricula))
+        return false; 
+            
      if (arq.is_open())
     {
         if (beckup.is_open())
@@ -138,8 +149,12 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
           value.clear();
             }
         }
+        else
+            Opcoes::CadastroSucesso();
         beckup.close();
     }
+    else
+        Opcoes::CadastroSucesso();
     arq.close();
     Updatesrc();    
 

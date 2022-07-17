@@ -31,6 +31,7 @@ class Administrador: public User{
         void Updatesrc();
         bool Devolucao(string matricula, int id);
         bool SetBloqueio(string matricula,string block);
+        bool validarUsuario(string matricula);
 };
 
 #endif
