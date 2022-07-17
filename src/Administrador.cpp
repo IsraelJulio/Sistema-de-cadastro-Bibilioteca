@@ -268,7 +268,7 @@ bool Administrador::Devolucao(string matricula, int id)
     return true;
 }
 
-bool Administrador::SetBloqueio(string matricula)
+bool Administrador::SetBloqueio(string matricula, string block)
 {
     vector<User*> usuariosSalvos = User::GetAllUsers();
     vector<Livro*> livrosSalvos;
@@ -301,7 +301,7 @@ bool Administrador::SetBloqueio(string matricula)
                         {                                
                             livros += "," + value[o]; 
                         }
-                        value[3] = "0";
+                        value[3] = block;
                     }else
                         {
 

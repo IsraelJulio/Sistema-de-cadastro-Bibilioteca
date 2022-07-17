@@ -50,7 +50,7 @@ bool menu::TelaPrincipal()
     string matricula = "";
     std::vector<string> principal = { "0", "1", "9" };
     std::vector<string> comum = { "0", "1", "9" };
-    std::vector<string> opAdm = { "0", "1", "2" , "3", "4", "5", "6", "9" };
+    std::vector<string> opAdm = { "0", "1", "2" , "3", "4", "5", "6", "7", "9" };
     this->SetTelaPrincipal(true);
 
     bool skip = false;
@@ -217,13 +217,7 @@ bool menu::TelaPrincipal()
                 for(auto livro : livros)
                 {
                         livro->Imprime();
-                }
-
-                voltarOpAdm = Opcoes::VoltarUsuario();
-
-                if(voltarOpAdm)
-                    return false;
-                LimparTela();
+                }               
             }
             if(resposta == "2")
             {
@@ -233,13 +227,7 @@ bool menu::TelaPrincipal()
                 for(auto user : allUsers)
                 {
                     user->Imprime();
-                }
-
-                voltarOpAdm = Opcoes::VoltarUsuario();
-
-                if(voltarOpAdm)
-                    return false;
-                LimparTela();
+                }               
             }
             if(resposta == "3")
             {
@@ -249,13 +237,37 @@ bool menu::TelaPrincipal()
                 {
                     user->Imprime();
                 }
+            }
+            if(resposta == "4")
+            {
+                Opcoes::OpcaoSelecionada("Bloquear Usuario!");
+                Opcoes::InformeMatricula();
 
-                voltarOpAdm = Opcoes::VoltarUsuario();
+                while(skip != true)
+                {
+                    cin >> matricula;
+                    if(matricula == "9")
+                    return false;
+                    LimparTela();            
+                    if(Administrador::validarMatricula(matricula,1))                
+                        skip = true;
+                    else
+                        Opcoes::OpcaoInvalida();   
+                }
+                skip = false;
+
+                if(_adm->SetBloqueio(matricula,"0"))
+                    Opcoes::CadastroSucesso();
+                else
+                    Opcoes::CadastroFalha();
+
+            }
+
+             voltarOpAdm = Opcoes::VoltarUsuario();
 
                 if(voltarOpAdm)
                     return false;
                 LimparTela();
-            }
         }
     }
         

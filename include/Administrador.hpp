@@ -30,7 +30,7 @@ class Administrador: public User{
         void Updatebkp();
         void Updatesrc();
         bool Devolucao(string matricula, int id);
-        bool SetBloqueio(string matricula);
+        bool SetBloqueio(string matricula,string block);
 };
 
 #endif

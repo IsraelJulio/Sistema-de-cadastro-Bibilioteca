@@ -25,6 +25,8 @@ public:
     static void CadastroSucesso();
     static void CadastroFalha();
     static void OpcaoInvalida();
+    static void InformeMatricula();
+
 
 
 };

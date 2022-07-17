@@ -30,6 +30,13 @@ void Opcoes::OpcoesMenu()
 {
 
 }
+void Opcoes::InformeMatricula()
+{
+    cout << "Digite o numero da matricula" << endl;
+    SaltarLinhas(8);
+    cout<< "[9] Voltar ao menu principal" << endl;
+    SaltarLinhas(3);  
+}
 void Opcoes::OPcoesMatricula()
 {
     cout << "Digite o numero da sua matricula cadastrada" << endl;
@@ -62,7 +69,8 @@ void Opcoes::OpcoesAdm(string nome)
     cout<< "[3] Visualizar usuarios bloqueados" << endl;
     cout<< "[4] Bloquear Usuario" << endl;
     cout<< "[5] Efetuar Devolucao" << endl;
-    cout<< "[6] Efetuar Emprestimo para usuario" << endl;
+    cout<< "[6] Desbloquear Usuario" << endl;
+    cout<< "[7] Efetuar Emprestimo para usuario"<< endl;
     cout<< "[9] Voltar ao Menu Principal" << endl;
 }
 
@@ -149,6 +157,7 @@ void Opcoes::OpcaoLivroGenero()
     cout << "[4] - Fantasia" << endl;
     cout << "[5] - Aventura" << endl;
     cout << "[6] - Romance" << endl;
+    cout << "[7] - Outros" << endl;
     SaltarLinhas(3);   
     cout << "[9] - Para Cancelar e Voltar ao menu principal" << endl;   
 
@@ -156,11 +165,11 @@ void Opcoes::OpcaoLivroGenero()
 
 void Opcoes::CadastroSucesso()
 {
-    cout << "Cadastro Efetuado com sucesso!!" << endl;
+    cout << "Operacao realizada com sucesso!!" << endl;
     SaltarLinhas(5);
 }
 
 void Opcoes::CadastroFalha()
 {
-    cout << "Cadastro Falhou! " << endl << "Parece que o Arquivo .txt esta aberto =(" << endl;
+    cout << "Operacao realizada com falha! " << endl << "Parece que o Arquivo .txt esta aberto =(" << endl;
 }
