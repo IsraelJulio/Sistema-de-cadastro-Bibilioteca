@@ -150,7 +150,7 @@ bool Administrador::validarMatricula(string matricula)
 {
     auto usuariosAtivos = User::GetAllUsers();
      for(std::vector<User*>::iterator it = usuariosAtivos.begin(); it != usuariosAtivos.end(); it++){ // validar matricula
-        if((*it)->GetMatricula() == matricula) return true;
+        if((*it)->GetMatricula() == matricula && (*it)->GetPerfil() == 1)  return  true;
     }
     return false;
 }
