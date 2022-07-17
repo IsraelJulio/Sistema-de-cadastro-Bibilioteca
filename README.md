@@ -102,4 +102,27 @@ Projeto final de PDSII visando o sistema de cadastro de livros em uma biblioteca
    ```
   
 
+  
+## Com o sistema aberto 👩🏽‍💻
+![image](https://user-images.githubusercontent.com/83346689/179424051-a79e3622-b52f-4d85-9d00-b4fbe99c7987.png)
+
+1) Utilize o console na maior resolução possivel para ter uma melhor experiencia
+
+2) Utilize os Usuarios existentes no banco para seu primeiro acesso!
+
+
+| Nome  |  Perfil  | Matricula |
+| ------------------- | ------------------- | ------------------- |
+|  Israel Jhonatas |  Administrador |  2270129 |
+|  STEVE ROGERS |  Usuario |  001 |
+|  TONY STARK |  Administrador |  002 |
+|  BRUCE BANNER |  Usuario |  003 |
+|  Thor |  Usuario |  004 |
+| NATASHA ROMANOFF | Usuario |  005 |
+| CLINT BARTON |  Usuario |  006 |
+|  STEPHEN STRANGE |  Usuario |  007 |
+|  ROCKET |  Usuario |  008 |
+|  CAROL DANVERS |  Usuario |  009 |
+|  SCOTT LANG |  Usuario |  010 |
+|  Wanda Maximoff |  Usuario |  W01 |
 
