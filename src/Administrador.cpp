@@ -81,7 +81,10 @@ bool Administrador::SetUsuario(User* Usuario){
 
     _usuariosAtivos = User::GetAllUsers();
     for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){
-        if((*it)->GetMatricula() == Usuario->GetMatricula()) return false;
+        if((*it)->GetMatricula() == Usuario->GetMatricula()) {
+            Opcoes::MatriculaJaExiste();
+            return false;
+        }
     }
     _usuariosAtivos.push_back(Usuario);
     bool result = Administrador::AtualizarListaDeUsuarios(_usuariosAtivos);

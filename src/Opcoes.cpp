@@ -217,7 +217,31 @@ void Opcoes::DadosIncorretos()
     cout << "- o arquivo .txt se encontra fechado" << endl << endl;
 }
 
+void Opcoes::InformeNome()
+{
+    cout << "informe o nome do usuario:"<< endl;
+}
+
+void Opcoes::InformeMatriculaC()
+{
+    cout << "informe a matricula do usuario:"<< endl;
+}
+
+void Opcoes::InformePerfil()
+{
+    cout << "informe o perfil do usuario:"<< endl << endl;
+    cout << "[0] - Usuario Comum \t [1] - Administrador do Sistema";
+    SaltarLinhas(3);
+    cout << "[9] - Para Cancelar e Voltar ao menu principal" << endl;   
+}
+
 void Opcoes::UsuarioBloqueado()
 {
     cout << "O Usuario se encontra bloqueado no sistema para pegar novos livros!" <<endl;
+}
+
+void Opcoes::MatriculaJaExiste()
+{
+    cout << "A matricula informada ja existe no banco de dados" << endl;
+    cout<< "Favor inserir uma nova matricula" << endl;
 }

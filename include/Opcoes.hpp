@@ -30,6 +30,10 @@ public:
     static void DadosIncorretos();
     static void UsuarioBloqueado();
     static void Titulo();
+    static void InformeNome();
+    static void InformeMatriculaC();
+    static void InformePerfil();
+    static void MatriculaJaExiste();
 
 
 

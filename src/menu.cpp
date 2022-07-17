@@ -360,8 +360,48 @@ bool menu::TelaPrincipal()
                     Opcoes::CadastroSucesso();
 
             }
-                 skip = false;
-             voltarOpAdm = Opcoes::VoltarUsuario();
+            if(resposta == "8")
+            {
+                Opcoes::OpcaoSelecionada("Cadastro de Usuario");
+                string nome = "";
+               
+                while(skip != true)
+                {    
+                    Opcoes::InformeNome();
+                    cin.ignore();
+                    std::getline (std::cin,nome);
+                    nome = Operacoes::contencao(nome);
+                    Opcoes::InformeMatriculaC();
+                    cin >> matricula;
+                    matricula = Operacoes::contencao(matricula);
+                    Opcoes::InformePerfil();
+                    cin >> resposta;                                    
+                    if(resposta == "9")
+                    return false;
+                    LimparTela();            
+                    if(resposta == "0")     
+                    {
+                        if(_adm->SetUsuario(new Usuario(nome,matricula,EPerfil::USER))){
+                            skip = true;
+                         Opcoes::CadastroSucesso();
+                        }
+                            skip = true;
+                    }
+                     if(resposta == "1")     
+                    {
+                        if(_adm->SetUsuario(new Administrador(nome,matricula,EPerfil::ADMIN))){
+                            skip = true;
+                         Opcoes::CadastroSucesso();
+                        }
+                    }
+                    if(std::find(comum.begin(), comum.end(), resposta) == comum.end())
+                        Opcoes::OpcaoInvalida();   
+                }
+                skip = false;
+
+            }
+            skip = false;
+            voltarOpAdm = Opcoes::VoltarUsuario();
 
                 if(voltarOpAdm)
                     return false;
