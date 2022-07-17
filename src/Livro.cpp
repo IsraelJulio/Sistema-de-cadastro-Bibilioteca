@@ -2,27 +2,58 @@
 #include"../include/Operacoes.hpp"
 #include<fstream>
 #include <iterator>
-
+/**
+ * @brief Construct a new Livro:: Livro object
+ * 
+ * @param id 
+ * @param nome 
+ * @param genero 
+ * @param active 
+ */
 Livro::Livro(int id, string nome, EGenero genero, bool active){
     _id = id;
     _nome = nome;
     _genero = genero;
     _active = active;
 }
+/**
+ * @brief Pegar Id
+ * 
+ * @return int 
+ */
 int Livro::GetId(){
     return _id;
 }
-
+/**
+ * @brief Pegar Nome
+ * 
+ * @return string 
+ */
 string Livro::GetName(){
     return _nome;
 }
-
+/**
+ * @brief Pegar Genero
+ * 
+ * @return EGenero 
+ */
 EGenero Livro::GetGenre(){
     return _genero;
 }
+/**
+ * @brief Pegar Status
+ * 
+ * @return true 
+ * @return false 
+ */
 bool Livro::GetStats(){
     return _active == true? "1" : "0";
 }
+/**
+ * @brief Função para carregar todos os livros salvos
+ * 
+ * @return vector<Livro*> 
+ */
 vector<Livro*> Livro::CarregarLivrosSalvos(){
     vector<Livro*> livrosSalvos;
     vector<string> value;
@@ -40,11 +71,19 @@ vector<Livro*> Livro::CarregarLivrosSalvos(){
     }   
     return livrosSalvos;
 }
-
+/**
+ * @brief Função para imprimir os dados dos usuarios
+ * 
+ */
 void Livro::Imprime(){
     cout << _id << " - " << _nome << " | " << GetEnum(_genero) << endl;
 }
-
+/**
+ * @brief Função para retornar o nome de um determinado Enum
+ * 
+ * @param EnumId 
+ * @return string 
+ */
 string Livro::GetEnum(EGenero EnumId){
     string result = "";
     switch (EnumId)
@@ -86,7 +125,12 @@ string Livro::GetEnum(EGenero EnumId){
     }
     return result;
 }
-
+/**
+ * @brief Pega o livro pelo seu ID
+ * 
+ * @param id 
+ * @return Livro* 
+ */
 Livro* Livro::GetById(int id){
     vector<Livro*> livrosSalvos = Livro::CarregarLivrosSalvos();
     for(auto it : livrosSalvos) {

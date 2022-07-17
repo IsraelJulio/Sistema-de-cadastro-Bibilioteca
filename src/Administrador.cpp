@@ -5,14 +5,35 @@
 #include <fstream>
 #include <typeinfo>
 
+/**
+ * @brief Construct a new Administrador:: Administrador object
+ * 
+ * @param nome 
+ * @param matricula 
+ * @param perfil 
+ * @author Israel Julio
+ * @since 17-07-2022
+ */
+
+
 Administrador::Administrador(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
 Administrador::Administrador(string nome, string matricula, EPerfil perfil,bool active): User(nome,matricula,perfil,active){}
 
+/**
+ * @brief Função para imprimir os dados do administrador
+ * 
+ */
 void Administrador::Imprime(){
     cout <<endl <<  "Perfil: ADMINISTRADOR \nNome: " << _nome << "\nMATRICULA: " << _matricula  << endl;
     return;
 }
 
+/**
+ * @brief Função Para Listar Livros Bloqueados
+ * 
+ * @param livrosSalvos 
+ * @return vector<Livro*> 
+ */
 vector<Livro*> Administrador::ListarLivrosBloqueados(vector<Livro*> livrosSalvos){  
 
     for(std::vector<Livro*>::iterator it = livrosSalvos.begin(); it != livrosSalvos.end(); it++){
@@ -28,6 +49,12 @@ vector<Livro*> Administrador::ListarLivrosBloqueados(vector<Livro*> livrosSalvos
     return _livrosBloqueados;
 }
 
+/**
+ * @brief Função para listar Usuarios Ativos
+ * 
+ * @param usuarios 
+ * @return vector<User*> 
+ */
 vector<User*> Administrador::ListarUsuariosAtivos(vector<User*> usuarios){
 
     for(std::vector<User*>::iterator it = usuarios.begin(); it != usuarios.end(); it++){
@@ -43,6 +70,13 @@ vector<User*> Administrador::ListarUsuariosAtivos(vector<User*> usuarios){
     return _usuariosAtivos;
 }
 
+/**
+ * @brief Função para criar Usuario
+ * 
+ * @param Usuario 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::SetUsuario(User* Usuario){
 
     _usuariosAtivos = User::GetAllUsers();
@@ -55,6 +89,14 @@ bool Administrador::SetUsuario(User* Usuario){
 
 }
 
+/**
+ * @brief Função para remover um usuario
+ * 
+ * @param matricula 
+ * @param list 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::removerUsuario(string matricula, vector<User *> list)
 {
   for(std::vector<User*>::iterator it = _usuariosAtivos.begin(); it != _usuariosAtivos.end(); it++){
@@ -63,6 +105,14 @@ bool Administrador::removerUsuario(string matricula, vector<User *> list)
     return true;
 }
 
+/**
+ * @brief Função para criar um livro
+ * 
+ * @param nome 
+ * @param genero 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::SetLivro(string nome, EGenero genero)
 {
     auto livros = Livro::CarregarLivrosSalvos();
@@ -80,6 +130,14 @@ bool Administrador::SetLivro(string nome, EGenero genero)
     livro_txt.close();
     return true;
 }
+
+/**
+ * @brief Função para validar se a matriicula existe no banco
+ * 
+ * @param matricula 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::validarUsuario(string matricula)
 {
     auto pog = Usuario::GetUserByMatricula(matricula);
@@ -94,6 +152,14 @@ bool Administrador::validarUsuario(string matricula)
     return true;
 }
 
+/**
+ * @brief Função para associar um livro a um usuario
+ * 
+ * @param id 
+ * @param matricula 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::SetLivroByUsuario(int id, string matricula)
 {
     vector<User*> usuariosSalvos = User::GetAllUsers();
@@ -161,6 +227,14 @@ bool Administrador::SetLivroByUsuario(int id, string matricula)
     return true;
 }
 
+/**
+ * @brief Função para validar a matricula relativa a um perfil
+ * 
+ * @param matricula 
+ * @param perfil 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::validarMatricula(string matricula, int perfil)
 {
     auto usuariosAtivos = User::GetAllUsers();
@@ -170,6 +244,13 @@ bool Administrador::validarMatricula(string matricula, int perfil)
     return false;
 }
 
+/**
+ * @brief Função para validar se o id do livro existe no banco
+ * 
+ * @param id 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::validarLivro(int id)
 {
     auto livros = Livro::CarregarLivrosSalvos();
@@ -179,9 +260,13 @@ bool Administrador::validarLivro(int id)
     return false;
 }
 
-
-bool EditarUsuario(string matricula){return true;}
-
+/**
+ * @brief Função para atulizar a lista de usuarios
+ * 
+ * @param list 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::AtualizarListaDeUsuarios(vector<User *> list){
 
 ofstream myfile ("Usuarios.txt");
@@ -201,10 +286,19 @@ ofstream myfile ("Usuarios.txt");
 
 }
 
+/**
+ * @brief Função para listar os dados de um determiado usuario
+ * 
+ * @return string 
+ */
 string Administrador::GetDados(){
     return this->_nome + "," + this->_matricula + ",1,"+ this->GetStatusUser();    
 }
 
+/**
+ * @brief função que atualiza os bancos de dados
+ * 
+ */
 void Administrador::Updatebkp()
 {
     ifstream  src("Usuarios.txt", std::ios::binary);
@@ -212,6 +306,10 @@ void Administrador::Updatebkp()
     dst << src.rdbuf();
 }
 
+/**
+ * @brief Função que atuyaliza os bancos de dados
+ * 
+ */
 void Administrador::Updatesrc()
 {
     ifstream  src("Usuarios_bkp.txt", std::ios::binary);
@@ -219,6 +317,14 @@ void Administrador::Updatesrc()
     dst << src.rdbuf();
 }
 
+/**
+ * @brief Função para retirar um livro da lista de emprestimos de um determinado usuario
+ * 
+ * @param matricula 
+ * @param id 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::Devolucao(string matricula, int id)
 {
     vector<User*> usuariosSalvos = User::GetAllUsers();
@@ -283,6 +389,14 @@ bool Administrador::Devolucao(string matricula, int id)
     return true;
 }
 
+/**
+ * @brief Função para bloquear um usuario
+ * 
+ * @param matricula 
+ * @param block 
+ * @return true 
+ * @return false 
+ */
 bool Administrador::SetBloqueio(string matricula, string block)
 {
     vector<User*> usuariosSalvos = User::GetAllUsers();

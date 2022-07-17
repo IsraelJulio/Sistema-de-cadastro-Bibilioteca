@@ -4,12 +4,41 @@
 #include<fstream>
 #include <iterator>
 #include <algorithm>
-
+/**
+ * @brief Construct a new Usuario:: Usuario object
+ * 
+ * @param nome 
+ * @param matricula 
+ * @param perfil 
+ * @author Israel
+ */
 Usuario::Usuario(string nome, string matricula, EPerfil perfil): User(nome,matricula,perfil){}
+/**
+ * @brief Construct a new Usuario:: Usuario object
+ * 
+ * @param nome 
+ * @param matricula 
+ * @param perfil 
+ * @param stats 
+ * @author Israel
+ */
 Usuario::Usuario(string nome, string matricula, EPerfil perfil,bool stats): User(nome,matricula,perfil,stats){}
+/**
+ * @brief Construct a new Usuario:: Usuario object
+ * 
+ * @param nome 
+ * @param matricula 
+ * @param perfil 
+ * @param livros 
+ * @author Israel
+ */
 Usuario::Usuario(string nome, string matricula, EPerfil perfil,vector<Livro*> livros): User(nome,matricula,perfil){
     _meusLivros = livros;
 }
+/**
+ * @brief Imprime na tela os dados do usuario
+ * 
+ */
 void Usuario::Imprime(){
     cout <<endl <<  "Perfil: USUARIO \nNome: " << _nome << "\nMATRICULA: " << _matricula  << endl;
     if(_meusLivros.size() != 0)
@@ -24,11 +53,20 @@ void Usuario::Imprime(){
 
     return;
 }
-
+/**
+ * @brief retorna os dados do usuario
+ * 
+ * @return string 
+ */
 string Usuario::GetDados(){
     return this->_nome + "," + this->_matricula + ",2," + this->GetStatusUser() + GetMyBooks();    
 }
 
+/**
+ * @brief Retorna uma string coms os Ids dos livros do usuario
+ * 
+ * @return string 
+ */
 string Usuario::GetMyBooks(){
     string result = "";    
     ifstream arq("Usuarios_bkp.txt");
@@ -55,6 +93,12 @@ string Usuario::GetMyBooks(){
     return result;
 }
 
+/**
+ * @brief Pega o usuario pela matricula
+ * 
+ * @param matricula 
+ * @return User* 
+ */
 User* Usuario::GetUserByMatricula(string matricula)
 {
     auto usuariosAtivos = User::GetAllUsers();

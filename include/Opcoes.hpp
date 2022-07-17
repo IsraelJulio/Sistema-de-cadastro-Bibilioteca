@@ -29,6 +29,7 @@ public:
     static void InformeLivroId();
     static void DadosIncorretos();
     static void UsuarioBloqueado();
+    static void Titulo();
 
 
 

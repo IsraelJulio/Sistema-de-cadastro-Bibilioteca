@@ -5,14 +5,29 @@
 #include<fstream>
 #include <iterator>
 #include <algorithm>
-
+/**
+ * @brief Construct a new User:: User object
+ * 
+ * @param nome 
+ * @param matricula 
+ * @param perfil 
+ * @param active 
+ * @author Israel
+ */
 User::User(string nome, string matricula, EPerfil perfil, bool active){
     _nome = nome;
     _matricula = matricula;
     _perfil = perfil;
     _active = active;
 }
-
+/**
+ * @brief Construct a new User:: User object
+ * 
+ * @param nome 
+ * @param matricula 
+ * @param perfil 
+ * @author Israel
+ */
 User::User(string nome, string matricula, EPerfil perfil){
     _nome = nome;
     _matricula = matricula;
@@ -20,6 +35,11 @@ User::User(string nome, string matricula, EPerfil perfil){
     _active = true;
 
 }
+/**
+ * @brief Pegar usuarios bloqueados
+ * 
+ * @return vector<User*> 
+ */
 vector<User*> User::GetBlockUsers(){
 vector<User*> usuariosSalvos = GetAllUsers();
 vector<User*>  result;
@@ -30,7 +50,11 @@ vector<User*>  result;
     });
 return result;
 }
-
+/**
+ * @brief Pegar todos os usuarios
+ * 
+ * @return vector<User*> 
+ */
 vector<User*> User::GetAllUsers(){
     vector<User*> usuariosSalvos;
     vector<Livro*> livrosSalvos;
@@ -64,17 +88,36 @@ vector<User*> User::GetAllUsers(){
     return usuariosSalvos;
 }
 
+/**
+ * @brief Pegar o status do usuario
+ * 
+ * @return string 
+ */
 string User::GetStatusUser(){
     return _active == true? "1" : "0";
 }
-
+/**
+ * @brief retorna a matricula do usuario
+ * 
+ * @return string 
+ */
 string User::GetMatricula(){
   return _matricula;
 }
+/**
+ * @brief retorna o nome do usuario
+ * 
+ * @return string 
+ */
 string User::GetNome()
 {
     return _nome;
 }
+/**
+ * @brief retorna o perfil do usuario
+ * 
+ * @return int 
+ */
 int User::GetPerfil()
 {
   return _perfil == EPerfil::ADMIN ? 0 : 1;
